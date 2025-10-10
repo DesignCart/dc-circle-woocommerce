@@ -107,7 +107,7 @@ You are free to use, modify, and distribute it in both personal and commercial p
 
 ## 🔗 Useful Links
 
-- 🌐 Theme page: [https://www.designcart.pl/dc-circle]([https://www.designcart.pl/dc-circle](https://www.designcart.pl/laboratorium/231-dc-circle-darmowy-szablon-dla-woocommerce.html))  
+- 🌐 Theme page: [DC Circle - Darmowy szablon dla Woocommerce]([https://www.designcart.pl/dc-circle](https://www.designcart.pl/laboratorium/231-dc-circle-darmowy-szablon-dla-woocommerce.html)  
 
 ---
 
