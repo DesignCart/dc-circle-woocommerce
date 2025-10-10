@@ -1,0 +1,128 @@
+
+.dc-products-carousel-module{
+    position: relative;
+}
+
+.dc-products-carousel-module{
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.dc-products-carousel-module h2{
+  text-align: center;
+  font-size:36px;
+}
+
+.dc-products-carousel-wrapper{
+    padding-left: 70px;
+    padding-right: 70px;
+}
+
+h1.dc-products-carousel-title,
+h2.dc-products-carousel-title,
+h3.dc-products-carousel-title,
+h4.dc-products-carousel-title,
+h5.dc-products-carousel-title,
+h6.dc-products-carousel-title{
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+h1.dc-products-carousel-title{
+    font-size: 2.25rem;
+}
+
+h2.dc-products-carousel-title{
+    font-size: 2rem;
+}
+
+h3.dc-products-carousel-title{
+    font-size: 1.8rem;
+}
+
+h4.dc-products-carousel-title{
+    font-size: 1.6rem;
+}
+
+h5.dc-products-carousel-title{
+    font-size: 1.4rem;
+}
+
+h6.dc-products-carousel-title{
+    font-size: 1.2rem;
+}
+
+.dc-products-carousel-description{
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+}
+h3.dc-products-carousel-product-title{
+    text-align: center;
+}
+h3.dc-products-carousel-product-title a{
+    font-size: 1rem;
+    color:#000;
+    text-align: center;
+    font-weight: 700;
+}
+
+.dc-products-carousel-product-price{
+    font-size: 1rem;
+    color:#000;
+    font-weight: 700;
+    text-align: center;
+}
+
+.dc-products-carousel-product-cart{
+    text-align: center;
+    margin-top: 15px;
+}
+
+.dc-products-carousel-product-item{
+    padding: 20px;
+    border-radius: 25px;
+    background: #fff;
+    border:1px solid #f9f9f9;
+}
+
+button.dc-owl-prev,
+button.dc-owl-next{
+    height: 64px;
+    width: 64px;
+    background: #000;
+    color:#fff;
+    display: flex;
+	justify-content: center;
+	align-items: center;
+    font-size: 36px;
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    border:none;
+    z-index: 10;
+    border-radius: 50%;
+}
+
+button.dc-owl-prev img,
+button.dc-owl-next img{
+    max-width: 100%;
+}
+
+button.dc-owl-prev{
+    left: 0px;
+}
+
+button.dc-owl-next{
+    right:0px;
+}
+
+button.dc-owl-prev svg path,
+button.dc-owl-next svg path {
+    fill: #ffffff; /* lub po prostu 'white' */
+}
+
+.dc-products-carousel-module .owl-carousel .owl-nav {
+    display: none !important;
+}

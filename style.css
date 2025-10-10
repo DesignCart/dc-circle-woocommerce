@@ -1,0 +1,1165 @@
+/*
+Theme Name: DC Circle
+Theme URI: https://www.designcart.pl
+Author: Design Cart
+Author URI: https://www.designcart.pl
+Description: Custom WooCommerce theme.
+Version: 1.0.0
+Text Domain: dc_circle
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+html{
+    margin: 0px;
+    padding: 0px;
+    max-width: 100vw;
+}
+
+body{
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+    font-size: 16px;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+a, a:hover{
+    text-decoration: none;
+}
+
+h1{
+    font-size: 2.25rem;
+}
+
+h2{
+    font-size: 1.8rem;
+}
+
+h3{
+    font-size: 1.4rem;
+}
+
+h4{
+    font-size: 1.2rem;
+}
+
+h5{
+    font-size: 1.1rem;
+}
+
+h6{
+    font-size: 1rem;
+}
+
+.header-background,
+h2.featureds-intro-header,
+h2.dc-products-carousel-title{
+    background: url('assets/images/header-img.webp') no-repeat bottom center;
+    padding-bottom: 40px;
+}
+
+.container {
+	max-width: 1600px !important;
+}
+
+/** PRODUCTS CATEGORY ***/
+select,
+.dc-products-sort select.orderby{
+	border-radius: 15px;
+    padding: 10px;
+}
+
+.dc-products-sort{
+    display: flex;
+    align-items: center;
+}
+
+/** PRODUCT IN CATEGORY **/
+.dc-card.card{
+	border-radius: 12px;
+	box-shadow: rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    border-width: 2px;
+    transition: all 0.5s ease;
+    padding: 15px;
+}
+.dc-card.card:hover{
+    box-shadow: 2px 2px 15px 0 rgba(0,0,0,0.2);
+}
+a.dc-btn-addcart
+button.dc-btn-addcart{
+    border-radius:15px !important;
+}
+
+.dc-title{
+    width: calc(100% - 16px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) #respond input#submit, .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) a.button, .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) button.button, .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) input.button, :where(body:not(.woocommerce-block-theme-has-button-styles)):where(:not(.edit-post-visual-editor)) .woocommerce #respond input#submit, :where(body:not(.woocommerce-block-theme-has-button-styles)):where(:not(.edit-post-visual-editor)) .woocommerce a.button, :where(body:not(.woocommerce-block-theme-has-button-styles)):where(:not(.edit-post-visual-editor)) .woocommerce button.button, :where(body:not(.woocommerce-block-theme-has-button-styles)):where(:not(.edit-post-visual-editor)) .woocommerce input.button {
+    font-size: 100%;
+    margin: 0;
+    line-height: 1;
+    cursor: pointer;
+    position: relative;
+    text-decoration: none;
+    overflow: visible;
+    padding: .618em 1em;
+    font-weight: 400;
+    border-radius: 15px;
+    left: auto;
+    color: #515151;
+    background-color: #e9e6ed;
+    border: 0;
+    display: inline-block;
+    background-image: none;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+/* Miniatura + hover */
+.dc-thumb-wrap{ overflow:hidden; }
+.dc-thumb-main,
+.dc-thumb-hover{ object-fit: cover; }
+.dc-thumb-hover{ opacity:0; transition: opacity .2s ease; }
+.dc-card:hover .dc-thumb-hover{ opacity:1; }
+
+/* Badges */
+.dc-badge{
+	position:absolute; top:10px; left:10px;
+	border-radius: 999px;
+	padding: .25rem .6rem; font-size:.75rem; font-weight:600;
+}
+
+/*PRODUCT CARD */
+.dc-product-title{
+
+}
+
+.owl-carousel .owl-item img {
+  display: block;
+  max-width: 100% !important;
+  height:auto;
+}
+
+.dc-qty-btn {
+    border: none;
+    width: 30px !important;
+    min-width: 30px !important;
+    max-width: 30px !important;
+    height: 30px;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+    line-height: 0px;
+}
+
+.dc-qty-input {
+    max-width: 70px;
+    width: 70px;
+    height: 30px;
+    text-align: center !important;
+    border: none !important;
+    outline: none;
+    font-size: 14px;
+    border-radius: 0 !important;
+}
+
+table.variations { border-collapse: separate; }
+table.variations tr { display: table-row !important; }
+table.variations th,
+table.variations td { display: table-cell !important; vertical-align: middle !important; }
+
+.dc-atc-row{
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	flex-wrap: nowrap;
+}
+
+.product_meta > span {
+    display: block;
+    margin-bottom: 4px; /* odstęp między liniami */
+}
+
+.product_meta > span:last-child {
+    margin-bottom: 0;
+}
+
+/* Domyślne WooCommerce quantity */
+.dc-atc-row .quantity{ width:132px; margin:0; }
+.dc-atc-row .quantity .qty{ width:100%; }
+
+/* Jeśli używasz własnego komponentu dc-qty-wrapper */
+.dc-atc-row .dc-qty-wrapper{ width:132px; }
+.dc-atc-row .dc-qty-input{ width:100%; }
+
+/* Żeby tekst na przycisku się nie łamał */
+.dc-atc-row .single_add_to_cart_button{ white-space: nowrap; }
+
+.product_meta span:first{
+    display:block;
+}
+
+/*GALLERY */
+.swiper-button-next,
+.swiper-button-prev{
+    width: 40px !important;
+    height: 40px !important;
+    display: felx;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after{
+    font-size: 22px !important;
+}
+swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.swiper {
+    width: 100%;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    border-radius:25px;
+
+}
+
+.swiper.mySwiper {
+    padding: 20px !important;
+}
+.swiper-slide {
+    background-size: cover;
+    background-position: center;
+}
+
+.mySwiper2 {
+    height: 80%;
+    width: 100%;
+}
+
+.mySwiper {
+    height: 20%;
+    box-sizing: border-box;
+}
+
+.mySwiper .swiper-slide {
+    width: 25%;
+    height: 100%;
+    opacity: 0.4;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.mySwiper .swiper-slide-thumb-active {
+    opacity: 1;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Proporcje i układ */
+.dc-gallery .ratio { background:#fff; border:1px solid rgba(0,0,0,.06); border-radius: 8px; }
+.dc-gallery .swiper { width:100%; height:100%; }
+.dc-gallery .swiper-slide { display:flex; align-items:center; justify-content:center; }
+.dc-gallery .dc-gal-prev, .dc-gallery .dc-gal-next { z-index:5; }
+@media (min-width: 992px){
+	.dc-thumbs { height: 520px; } /* stała wysokość kolumny miniaturek */
+}
+@media (max-width: 991.98px){
+	.dc-thumbs { padding-top: .25rem; }
+}
+
+/* Aktywna miniatura */
+.dc-thumbs .swiper-slide-thumb-active { outline:2px solid #6e5335; border-radius:6px; }
+
+/* Obrazki mieszczą się ładnie */
+.object-fit-contain { object-fit: contain; }
+
+/** CART ***/
+.wp-element-button{
+    border-radius:15px;
+}
+
+/** BLOG **/
+.dc-article{
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 0 25px 0 rgba(0,0,0,0);
+    transition: all 0.3s ease;
+}
+
+.dc-article:hover{
+    box-shadow: 0 0 25px 0 rgba(0,0,0,0.1);
+}
+
+.dc-article-body{
+    padding: 20px;
+}
+
+.dc-article-title{
+    margin-bottom: 15px;
+}
+
+.dc-article-info{
+    padding: 7px;
+    position: absolute;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.dc-article-image{
+    position: relative;
+}
+
+.card-img-top {
+  width: 100%;
+  height: auto;         /
+  object-fit: initial;
+}
+
+.dc-article-footer{
+    padding: 0px 20px 20px 20px;
+}
+
+.dc-article-footer a{
+    font-weight: 700;
+}
+.dc-sidebar{
+    position: sticky;
+    top:50px;
+    margin-top: 130px;
+}
+.dc-recent-posts .dc-recent-thumb img { object-fit: cover; }
+.dc-recent-posts .dc-recent-body a { text-decoration: none; }
+.dc-recent-posts .dc-recent-body a:hover { text-decoration: underline; }
+
+.comment-respond{
+  border:1px solid var(--dc-border);
+  border-radius:14px;
+  box-shadow: var(--dc-shadow);
+  padding: 1.5rem;
+  background:#fff;
+  margin-top:2.5rem;
+}
+.comment-respond .comment-reply-title{
+  font-size:1.25rem;
+  margin:0 0 .75rem;
+  color: var(--dc-bg-1);
+}
+
+/* Układ pól */
+.comment-form{
+  display:grid;
+  gap: 14px;
+}
+@media (min-width: 768px){
+  .comment-form{
+    grid-template-columns: 1fr 1fr;
+  }
+  .comment-form-comment{
+    grid-column: 1 / -1; /* textarea na całą szerokość */
+  }
+  .form-submit{
+    grid-column: 1 / -1;
+  }
+}
+
+/* Pola */
+.comment-form p{ margin:0; }
+.comment-form label{
+  display:block;
+  font-size:.9rem;
+  margin-bottom:.35rem;
+  color:#555;
+}
+
+.comment-form input[type="text"],
+.comment-form input[type="email"],
+.comment-form input[type="url"],
+.comment-form textarea{
+  width:100%;
+  border:1px solid var(--dc-border);
+  border-radius:10px;
+  padding:.65rem .8rem;
+  line-height:1.4;
+  background:#fff;
+  color:#222;
+  transition: border-color .15s ease, box-shadow .15s ease, background-color .2s ease;
+}
+
+.comment-form textarea{ min-height: 160px; resize: vertical; }
+
+.dc-single-wishlist {
+    margin-top: 15px;
+}
+
+.dc-single-wishlist-btn {
+	position: static;
+	margin-top: 10px;
+}
+
+/* Karta produktu lista życzeń: ukrycie napisu */
+.dc-single-wishlist-btn .yith-wcwl-add-to-wishlist-button__label {
+	display: none !important;
+}
+
+/* Karta produktu lista życzeń: samo serduszko, bez tła/kółka */
+.dc-single-wishlist-btn .yith-wcwl-add-to-wishlist-button.yith-wcwl-add-to-wishlist-button--anchor {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background: none;
+	border: none;
+	padding: 0;
+	margin: 0;
+	color: #6e5335; /* Twój kolor bazowy */
+	cursor: pointer;
+}
+
+/* Karta produktu lista życzeń: rozmiar ikony */
+.dc-single-wishlist-btn .yith-wcwl-add-to-wishlist-button svg {
+	width: 28px;
+	height: 28px;
+}
+
+/* Karta produktu lista życzeń: kolor po dodaniu */
+.dc-single-wishlist-btn .yith-wcwl-add-to-wishlist-button--exists,
+.dc-single-wishlist-btn .yith-wcwl-add-to-wishlist-button--added {
+	color: #b23c2a;
+}
+/* Karta produktu lista życzeń: Focus */
+.comment-form input:focus-visible,
+.comment-form textarea:focus-visible{
+  outline:0;
+  border-color: var(--dc-border-strong);
+  box-shadow: 0 0 0 4px rgba(110,83,53,.12);
+}
+
+/*** Lista życzeń - strona ***/
+.wishlist-title.wishlist-title-with-form{
+    display: none;
+}
+
+/* ============== WISHLIST (YITH) – styl motywu ============== */
+.yith-wcwl-form table.shop_table.wishlist_table.wishlist_view {
+  width:100% !important;
+  border-collapse: collapse !important;
+  background:#fff !important;
+  border-radius:12px !important;
+  overflow:hidden !important;
+  box-shadow:0 6px 20px rgba(0,0,0,.06) !important;
+  font-size:0.95rem !important;
+}
+
+/* nagłówki */
+.yith-wcwl-form table.shop_table.wishlist_table.wishlist_view thead th {
+  background:#f4f0e5 !important;
+  color:#6e5335 !important;
+  text-align:left !important;
+  padding:14px 16px !important;
+  font-weight:700 !important;
+  border-bottom:1px solid rgba(110,83,53,.25) !important;
+  white-space:nowrap !important;
+}
+
+/* komórki */
+.yith-wcwl-form table.shop_table.wishlist_table.wishlist_view tbody td {
+  padding:14px 16px !important;
+  vertical-align: middle !important;
+  border-bottom:1px solid #f1eee8 !important;
+}
+
+/* miniatury */
+.yith-wcwl-form .wishlist_table .product-thumbnail img {
+  width:80px !important; height:auto !important;
+  border-radius:10px !important;
+  display:block !important;
+}
+
+/* nazwa produktu */
+.yith-wcwl-form .wishlist_table .product-name a {
+  color:#2b2b2b !important;
+  font-weight:600 !important;
+  text-decoration:none !important;
+}
+.yith-wcwl-form .wishlist_table .product-name a:hover {
+  color:#6e5335 !important;
+}
+
+/* cena */
+.yith-wcwl-form .wishlist_table .product-price,
+.yith-wcwl-form .wishlist_table .product-price .amount {
+  color:#42362a !important;
+  font-weight:600 !important;
+}
+
+/* status dostępności */
+.yith-wcwl-form .wishlist_table .product-stock-status .wishlist-in-stock { color:#2e7d32 !important; font-weight:600 !important; }
+.yith-wcwl-form .wishlist_table .product-stock-status .wishlist-out-of-stock { color:#c62828 !important; font-weight:600 !important; }
+
+/* usuń (X) */
+.yith-wcwl-form .wishlist_table .product-remove a.remove {
+  color:#b23c2a !important; font-size:1.4rem !important; text-decoration:none !important;
+}
+.yith-wcwl-form .wishlist_table .product-remove a.remove:hover { color:#8f251e !important; }
+
+/* przycisk "Dodaj do koszyka" – jeśli nie używa Twojej klasy */
+.yith-wcwl-form .wishlist_table .product-add-to-cart a:not(.dc-btn) {
+  display:inline-block !important;
+  background:#f4f0e5 !important;
+  color:#6e5335 !important;
+  border:1px solid rgba(110,83,53,.25) !important;
+  border-radius:10px !important;
+  padding:.55rem .9rem !important;
+  font-weight:600 !important;
+  text-decoration:none !important;
+  transition:filter .2s ease, transform .06s ease !important;
+}
+.yith-wcwl-form .wishlist_table .product-add-to-cart a:not(.dc-btn):hover { filter:brightness(.98) !important; }
+.yith-wcwl-form .wishlist_table .product-add-to-cart a:not(.dc-btn):active { transform:translateY(1px) !important; }
+
+/* odstępy wierszy jako „karty” */
+.yith-wcwl-form .wishlist_table tbody tr:last-child td { border-bottom:none !important; }
+
+/* ============== MOBILE: zamień w karty ============== */
+@media (max-width: 768px) {
+  .yith-wcwl-form table.shop_table.wishlist_table.wishlist_view thead { display:none !important; }
+  .yith-wcwl-form table.shop_table.wishlist_table.wishlist_view,
+  .yith-wcwl-form table.shop_table.wishlist_table.wishlist_view tbody,
+  .yith-wcwl-form table.shop_table.wishlist_table.wishlist_view tr,
+  .yith-wcwl-form table.shop_table.wishlist_table.wishlist_view td {
+    display:block !important; width:100% !important;
+  }
+  .yith-wcwl-form table.shop_table.wishlist_table.wishlist_view tr {
+    margin:12px 0 !important;
+    border:1px solid #efeae2 !important;
+    border-radius:12px !important;
+    padding:12px !important;
+    box-shadow:0 2px 10px rgba(0,0,0,.04) !important;
+  }
+  .yith-wcwl-form .wishlist_table td.product-thumbnail { text-align:center !important; }
+  .yith-wcwl-form .wishlist_table .product-add-to-cart { margin-top:8px !important; }
+}
+
+/* ============== Stopka udostępniania ============== */
+.yith-wcwl-share { margin-top:16px !important; }
+.yith-wcwl-share .yith-wcwl-share-title { margin:0 0 8px !important; color:#6e5335 !important; }
+.yith-wcwl-share ul { display:flex !important; gap:10px !important; padding:0 !important; margin:0 !important; list-style:none !important; }
+.yith-wcwl-share .share-button a {
+  display:inline-flex !important; align-items:center !important; justify-content:center !important;
+  width:36px !important; height:36px !important; border-radius:50% !important;
+  border:1px solid rgba(110,83,53,.22) !important; background:#fff !important; color:#6e5335 !important;
+  text-decoration:none !important; transition:filter .2s ease !important;
+}
+.yith-wcwl-share .share-button a:hover { filter:brightness(.97) !important; }
+
+.product_type_variable.add_to_cart_button.add_to_cart.dc-btn.dc-style-2{
+    padding: 10px 15px;
+    border-radius: 15px;
+    display: inline-block !important;
+}
+
+.woocommerce-tabs.wc-tabs-wrapper{
+    margin-top: 40px;
+}
+
+/* Checkbox cookies */
+.comment-form-cookies-consent{
+  display:flex; align-items:center; gap:.5rem;
+  grid-column: 1 / -1;
+  color:#666;
+}
+.comment-form-cookies-consent input[type="checkbox"]{
+  width:1.05rem; height:1.05rem; accent-color: var(--dc-bg);
+}
+
+/* Błędy / wymagane */
+.comment-form .required{ color:#d33; margin-left:.25rem; }
+.comment-form .error{ color:#d33; font-size:.85rem; margin-top:.35rem; }
+
+/* Przycisk wyślij */
+.form-submit .submit{
+  display:inline-block;
+  background: var(--dc-bg-1);
+  color: var(--dc-color-1);
+  border:1px solid var(--dc-bg-1);
+  border-radius: 10px;
+  padding:.65rem 1rem;
+  font-weight:600;
+  cursor:pointer;
+  transition: transform .06s ease, filter .2s ease, box-shadow .2s ease;
+}
+.form-submit .submit:hover{ filter: brightness(.98); }
+.form-submit .submit:active{ transform: translateY(1px); }
+
+/* Odpowiedzi zagnieżdżone – drobne odsunięcie */
+.commentlist .children{
+  margin-left: 1.25rem;
+  border-left:2px solid var(--dc-border);
+  padding-left:1rem;
+}
+
+.dc-card-product-image{
+    position: relative;
+}
+
+.dc-wishlist-badge{
+    position: absolute;
+    top:0px;
+    right:0px;
+    z-index: 10;
+    text-align: right;
+}
+/* rodzic musi być relative */
+.woocommerce ul.products li.product { position: relative; }
+
+/* samo serduszko jako overlay w prawym górnym rogu */
+.woocommerce ul.products li.product .yith-add-to-wishlist-button-block{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  margin: 0 !important;
+  width: auto;
+  display: inline-flex;
+}
+
+/* wyłącz centrowanie z wcześniejszych reguł */
+.yith-add-to-wishlist-button-block .yith-wcwl-add-to-wishlist-button{
+  margin: 0 !important;
+  justify-content: center;
+}
+
+/* ukryj napis */
+.yith-add-to-wishlist-button-block .yith-wcwl-add-to-wishlist-button__label{
+  display:none !important;
+}
+
+
+.yith-add-to-wishlist-button-block .yith-wcwl-add-to-wishlist-button__label{
+  display: none !important;
+}
+
+.yith-wcwl-add-to-wishlist-button.yith-wcwl-add-to-wishlist-button--anchor {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;        /* średnica kółka */
+    height: 40px;
+    background-color: #fff;  /* tło kółka */
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    margin: 0 !important;
+    padding: 0;
+    transition: all 0.25s ease-in-out;
+}
+
+/* Ikonka w kółku */
+.yith-wcwl-add-to-wishlist-button svg {
+    width: 20px;
+    height: 20px;
+    color: #333; /* kolor ikony */
+    transition: color 0.25s ease-in-out;
+}
+
+/* Małe poprawki WordPressa */
+.logged-in-as{ margin-bottom:.5rem; font-size:.9rem; }
+#cancel-comment-reply-link{ font-size:.9rem; margin-left:.5rem; }
+
+/* Zgodność z motywami, które narzucają style */
+.comment-form input, .comment-form textarea { box-sizing: border-box; }
+
+
+.form-submit .submit:hover{ filter: brightness(1.05); }
+/*** CONTACT FORM ***/
+.dc-style-contact .wpcf7-form{
+  --dc-bg: #f4f0e5;
+  --dc-bg: #6e5335;
+  --dc-border: rgba(110,83,53,.25);
+  --dc-border-strong: rgba(110,83,53,.45);
+  --dc-shadow: 0 6px 20px rgba(0,0,0,.06);
+
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+  border: 1px solid var(--dc-border);
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: var(--dc-shadow);
+}
+
+/* Siatka: na >=768px dwa pola obok, textarea i submit pełna szerokość */
+@media (min-width: 768px){
+  .dc-style-contact .wpcf7-form{
+    grid-template-columns: 1fr 1fr;
+  }
+  .dc-style-contact .wpcf7-form p:nth-last-of-type(2),   /* wiersz z przyciskiem */
+  .dc-style-contact .wpcf7-form p:has(textarea){         /* wiersz z wiadomością */
+    grid-column: 1 / -1;
+  }
+}
+
+/* Reset odstępów wewnątrz <p> */
+.dc-style-contact .wpcf7-form p{
+  margin: 0;
+}
+
+/* Etykiety nad polami */
+.dc-style-contact .wpcf7-form label{
+  display: block;
+  font-size: .92rem;
+  color: #4b4b4b;
+  margin-bottom: .35rem;
+}
+
+/* Pola wejściowe */
+.dc-style-contact .wpcf7-form .wpcf7-form-control[type="text"],
+.dc-style-contact .wpcf7-form .wpcf7-form-control[type="email"],
+.dc-style-contact .wpcf7-form .wpcf7-form-control[type="url"],
+.dc-style-contact .wpcf7-form .wpcf7-text,
+.dc-style-contact .wpcf7-form .wpcf7-email,
+.dc-style-contact .wpcf7-form .wpcf7-textarea{
+  width: 100%;
+  border: 1px solid var(--dc-border);
+  border-radius: 10px;
+  padding: .7rem .85rem;
+  background: #fff;
+  color: #1d1d1d;
+  line-height: 1.4;
+  transition: border-color .15s ease, box-shadow .15s ease, background-color .2s ease;
+  box-sizing: border-box;
+}
+
+.dc-style-contact .wpcf7-form .wpcf7-textarea{
+  min-height: 160px;
+  resize: vertical;
+}
+
+/* Focus */
+.dc-style-contact .wpcf7-form .wpcf7-form-control:focus{
+  outline: 0;
+  border-color: var(--dc-border-strong);
+  box-shadow: 0 0 0 4px rgba(110,83,53,.12);
+}
+
+/* Błędy walidacji */
+.dc-style-contact .wpcf7-form .wpcf7-not-valid{
+  border-color: #c43b3b !important;
+}
+.dc-style-contact .wpcf7-form .wpcf7-not-valid-tip{
+  display: block;
+  margin-top: .35rem;
+  font-size: .85rem;
+  color: #c43b3b;
+}
+
+/* Komunikaty po wysłaniu */
+.dc-style-contact .wpcf7 form .wpcf7-response-output{
+  margin: 10px 0 0;
+  border-radius: 10px;
+  border-width: 1px;
+  padding: .75rem .9rem;
+}
+.dc-style-contact .wpcf7 form.invalid .wpcf7-response-output{ border-color:#c43b3b; color:#c43b3b; background:#ffecec; }
+.dc-style-contact .wpcf7 form.sent    .wpcf7-response-output{ border-color:#4aa564; color:#2c7a43; background:#eaf7ef; }
+
+/* Przycisk wyślij */
+.dc-style-contact .wpcf7-form .wpcf7-submit{
+  display: inline-block;
+  background: var(--dc-bg);
+  color: var(--dc-bg);
+  border: 1px solid var(--dc-border);
+  border-radius: 10px;
+  padding: .65rem 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .06s ease, filter .2s ease, box-shadow .2s ease;
+}
+.dc-style-contact .wpcf7-form .wpcf7-submit:hover{ filter: brightness(.98); }
+.dc-style-contact .wpcf7-form .wpcf7-submit:active{ transform: translateY(1px); }
+
+/* Spinner CF7 w naszej tonacji */
+.dc-style-contact .wpcf7-spinner{
+  margin-left: .5rem;
+  filter: hue-rotate(20deg) saturate(0.8);
+}
+
+/* Linki w formularzu (np. e-mail) */
+.dc-style-contact .wpcf7-form a{
+  color: var(--dc-bg);
+  text-decoration: underline;
+}
+.dc-style-contact .wpcf7-form a:hover{ text-decoration: none; }
+
+/* Dostępność: wygodne klikanie w label */
+.dc-style-contact .wpcf7-form .wpcf7-form-control-wrap{
+  display: block;
+}
+
+/** PAGES **/
+.dc-page h1{
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.wp-block-columns.dc-divider {
+    position: relative;
+}
+
+.wp-block-columns.dc-divider::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.wp-block-columns.dc-divider::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.wp-block-columns.dc-divider.dc-divider-30::before {
+    left: 30%;
+}
+
+.wp-block-columns.dc-divider.dc-divider-30::after {
+    left: 30%;
+}
+
+/***  CONTACT ***/
+.contact-icon .wp-block-media-text__media img{
+    width: auto;
+    max-width: 100%;
+}
+
+.contact-icon.wp-block-media-text{
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.contact-icon.wp-block-media-text p{
+    margin:0px;
+}
+
+:root{
+  --dc-brown:#6e5335;           /* kolor motywu (tło stopki) */
+  --dc-pill-border:#fff;        /* kolor obramowania kapsuły */
+  --dc-pill-fill:rgba(255,255,255,.14); /* wypełnienie inputu */
+  --dc-pill-focus:rgba(255,255,255,.2);
+  --dc-btn-bg:#fff;
+  --dc-btn-bg:#6e5335;
+}
+
+/* Kontener (pilnujemy, żeby nic nie wychodziło z kolumny) */
+.dc-newsletter{ width:100%; max-width:100%; color:#fff; }
+
+/* Formularz jako kolumna: rząd kapsuły + rząd checkboxa */
+.dc-newsletter__form{
+  display:flex; flex-direction:column; align-items:flex-start; gap:10px;
+  width:100%; max-width:100%;
+  text-align:left;
+  margin:0; padding:0;
+}
+
+/* ——— RZĄD KAPSUŁY ——— */
+.dc-newsletter__row{
+  display:flex; align-items:stretch; gap:0;
+  width:100%; max-width:100%;
+  /* kapsuła */
+  border:1.5px solid var(--dc-pill-border);
+  border-radius:999px;
+  overflow:hidden;            /* ścina rogi dzieci, żeby kapsuła była idealna */
+  background:transparent;
+  position:relative;
+}
+
+/* widoczna etykieta jako placeholder po lewej (dla dostępności i makiety) */
+.dc-newsletter__label{
+  position:absolute;
+  left:18px; top:50%;
+  transform:translateY(-50%);
+  pointer-events:none;
+  color:rgba(255,255,255,.85);
+  font-size:16px;
+}
+
+/* INPUT — zajmuje całą lewą część, elastyczny i może się mocno zwężać */
+.dc-newsletter__email{
+  flex:1 1 auto; min-width:0;      /* klucz: pozwala wejść poniżej naturalnej szerokości */
+  height:56px; line-height:56px;
+  padding:0 18px 0 72px;           /* miejsce na „etykietę” po lewej */
+  border:none; outline:0;
+  background:var(--dc-pill-fill);
+  color:#fff; font-size:16px;
+}
+
+/* kiedy user pisze/focus — przyciemnij wypełnienie i ukryj etykietę */
+.dc-newsletter__email:focus{ background:var(--dc-pill-focus); }
+.dc-newsletter__email:not(:placeholder-shown) + .dc-newsletter__submit,
+.dc-newsletter__email:focus + .dc-newsletter__submit{}
+/* chowamy label gdy input ma focus albo coś wpisano */
+.dc-newsletter__email:focus ~ .dc-newsletter__label,
+.dc-newsletter__email:not(:placeholder-shown) ~ .dc-newsletter__label{
+  opacity:0; visibility:hidden;
+}
+
+/* BUTTON — prawa część kapsuły, stała szerokość minimalna */
+.dc-newsletter__submit{
+  flex:0 0 auto;
+  height:56px; padding:0 26px;
+  background:var(--dc-btn-bg); color:var(--dc-btn-bg);
+  border:none; cursor:pointer; font-weight:600; font-size:16px;
+  white-space:nowrap;
+  transition:filter .2s, transform .06s;
+}
+.dc-newsletter__submit:hover{ filter:brightness(.97); }
+.dc-newsletter__submit:active{ transform:translateY(1px); }
+
+/* ——— CHECKBOX ——— */
+.dc-newsletter__privacy{ width:100%; color:#fff; }
+.dc-newsletter__privacy label{ display:inline-flex; align-items:center; gap:8px; }
+.dc-newsletter__privacy input[type="checkbox"]{ accent-color:#f5d28a; }
+
+#dc-products-listing .dc-qty-btn, .dc-qty-btn {
+    background-color: #f4f0e5 !important;
+    color: #6e5335 !important;
+}
+.dc-qty-minus {
+    border-radius: 0 !important;
+}
+
+.dc-btn-addcart{
+    white-space: nowrap;       /* zakaz łamania */
+    display: inline-flex;      /* ikona + tekst w jednej linii */
+    align-items: center;       /* wyśrodkowanie pionowe */
+    gap: 6px;
+}
+
+.woocommerce:where(body:not(.woocommerce-uses-block-theme)) div.product p.price,
+.woocommerce:where(body:not(.woocommerce-uses-block-theme)) div.product span.price{
+  color:var(--dc-btn-bg) !important;
+}
+
+/* lekko ciaśniejszy przycisk przy węższych kolumnach */
+@media (max-width: 1280px){
+  .dc-newsletter__submit{ padding:0 20px; }
+}
+
+/* Gdy kolumna staje się wąska, łamiemy kapsułę na 2 rzędy
+   tak, aby NIC nie wystawało poza .col-*. Obie części zostają „pigułami”. */
+@media (max-width: 576px){
+  .dc-newsletter__row{
+    flex-wrap:wrap; gap:8px;
+    border:none; border-radius:0;  /* usuwamy wspólną ramkę kapsuły */
+  }
+  .dc-newsletter__email{
+    flex:1 1 100%;
+    border:1.5px solid var(--dc-pill-border);
+    border-radius:999px;
+    padding-left:18px;        /* label znika, więc zwykły padding */
+    height:52px; line-height:52px;
+  }
+  .dc-newsletter__submit{
+    border:1.5px solid var(--dc-pill-border);
+    border-radius:999px;
+    height:52px; padding:0 18px;
+  }
+  .dc-newsletter__label{ display:none; }
+}
+
+/* Wąskie ekrany */
+@media (max-width: 380px){
+  .dc-newsletter__submit{ padding:0 16px; }
+}
+
+@media (max-width: 781px){
+    .dc-divider::before,
+    .dc-divider::after{
+        display: none;
+    }
+
+    .wp-block-image .alignright{
+        float: none;
+        margin: 0px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .wp-block-image{
+        text-align: center;
+    }
+}
+
+#home-products .add_to_cart_button,
+#home-products .dc_product_info_button{
+    padding: .618em 1em;
+    border-radius: 15px;
+}
+
+
+.wp-block-tnp-minimal p{
+    display: none;
+}
+
+#footer{
+    padding: 90px 0;
+}
+
+#footer ul{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+#footer ul li{
+    display: block;
+}
+
+#footer ul li a{
+    display: block;
+    transition: all 0.3s ease;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 2px;
+    text-transform: uppercase;
+}
+
+#footer ul li a:hover{
+    padding-left: 20px;
+}
+
+#footer .contact-info-item{
+    grid-template-columns:20px auto !important;
+    align-items: start !important;
+}
+
+#footer .contact-info-item figure.wp-block-media-text__media{
+    align-self: start !important;
+}
+
+#footer  .wp-block-media-text__content{
+    position: relative;
+}
+
+#footer  .wp-block-media-text__content::before{
+    content: "";
+    position: absolute;
+    border-left: 1px #fff solid;
+    left:-10px;
+    bottom: 15px;
+    top:35px;
+    z-index: 10;
+}
+
+#footer h4{
+  font-size: 1.4rem;
+  color: var(--footer-text);
+}
+
+.copyright{
+    background: rgba(0,0,0,0.5);
+    color:#fff;
+    font-size: 0.8rem;
+    padding: 10px 0;
+}
+.copyright a{
+    color:rgba(255, 255, 255, 0.8);
+}
+
+/* Category listing */
+.woocommerce-loop-category__title mark{
+  display:none;
+}
+.dc-category-item {
+    border-radius: 15px;
+    padding: 10px 15px;
+    transition: background 0.2s;
+}
+
+.dc-category-item:hover {
+    background: #f1f1f1;
+}
+
+.dc-category-flex {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.dc-category-thumb {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.dc-category-title {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0;
+    color: #222;
+}
+
+@media (min-width: 1400px) {
+    .row.dc-grid-xxl-5 {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1.5rem; /* odstępy jak w bootstrap col */
+    }
+
+    .row.dc-grid-xxl-5 > [class*="col-"],
+    .row.dc-grid-xxl-5 > [class*="dc-col-"] {
+        width: 100% !important; /* wyłącz szerokości col */
+        max-width: 100% !important;
+        flex: none;
+    }
+}
