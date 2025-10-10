@@ -73,18 +73,6 @@ Choose what appears on your front page:
 
 ---
 
-## 🖼️ Screenshots
-
-| Customizer Panel | Color Settings | Product Sliders |
-|------------------|----------------|-----------------|
-| ![Customize Theme](3-dostosuj-motyw.png) | ![Color Settings](8-kolorystyka.png) | ![Sliders](9-slidery-produktow.png) |
-
-| Main Banner | Site Identity | Widget Areas |
-|--------------|----------------|---------------|
-| ![Banner](6-baner-glowny.png) | ![Identity](5-tozsamosc-witryny.png) | ![Widgets](11-widgety.png) |
-
----
-
 ## 💡 Theme Overview
 
 **DC Circle** features a clean, conversion-oriented layout that can easily adapt to any niche.  
@@ -119,10 +107,7 @@ You are free to use, modify, and distribute it in both personal and commercial p
 
 ## 🔗 Useful Links
 
-- 🌐 Theme page: [https://www.designcart.pl/dc-circle](https://www.designcart.pl/dc-circle)  
-- 💾 Download: [Releases](../../releases)  
-- 🧭 Live demo: [View Demo](https://demo.designcart.pl/dc-circle)  
-- 📖 Documentation: [Setup Guide](https://www.designcart.pl/dc-circle/docs)
+- 🌐 Theme page: [https://www.designcart.pl/dc-circle]([https://www.designcart.pl/dc-circle](https://www.designcart.pl/laboratorium/231-dc-circle-darmowy-szablon-dla-woocommerce.html))  
 
 ---
 
