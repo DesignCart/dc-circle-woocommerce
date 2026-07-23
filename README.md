@@ -92,7 +92,7 @@ All sections are mobile-friendly, SEO-ready, and optimized for fast loading.
 
 ## 🧑‍💻 Author
 
-Developed by **[Design Cart](https://www.designcart.pl)** —  
+Developed by 👨‍💻 author: <a href="https://www.designcart.pl/pawel-nosko.html">Paweł Nosko</a> —  
 a team of professionals specializing in WooCommerce and OpenCart store development.  
 Maintained as part of the **Design Cart LAB** project.
 
