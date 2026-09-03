@@ -1,9 +1,10 @@
+<?php if ( function_exists( 'woocommerce_mini_cart' ) ) : ?>
 <div class="dc-slidecart-overlay"></div>
 <div id="dc-slidecart" class="dc-slidecart">
     <div class="dc-slidecart-content">
         <div class="dc-slidecart-header">
-            <h3>Twój koszyk</h3>
-            <button class="dc-slidecart-close">&times;</button>
+            <h3><?php esc_html_e( 'Your cart', 'dc-circle' ); ?></h3>
+            <button type="button" class="dc-slidecart-close">&times;</button>
         </div>
         
         <div id="dc-slidecart-inner">
@@ -13,3 +14,4 @@
         </div>
     </div>
 </div>
+<?php endif; ?>

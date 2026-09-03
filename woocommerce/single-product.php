@@ -1,5 +1,21 @@
 <?php
 /**
+ * The Template for displaying single products
+ *
+ * This template can be overridden by copying it to yourtheme/woocommerce/single-product.php.
+ *
+ * HOWEVER, on occasion WooCommerce will need to update template files and you
+ * (the theme developer) will need to copy the new files to your theme to
+ * maintain compatibility. We try to do this as little as possible, but it does
+ * happen. When this occurs the version of the template file will be bumped and
+ * the readme will list any important changes.
+ *
+ * @see     https://woocommerce.com/document/template-structure/
+ * @package WooCommerce\Templates
+ * @version 1.6.4
+ */
+
+/**
  * Fully custom Single Product template
  * - No page-level Woo wrappers/hooks
  * - Uses WooCommerce partials/functions for full functionality
@@ -33,12 +49,11 @@ if ( have_posts() ) :
 
 					<!-- GALERIA -->
                     <div class="col-12 col-sm-6 col-md-5 col-lg-4 offset-md-1 offset-lg-2">
-					    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-                        <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
+<div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
                             <div class="swiper-wrapper">
                                 <?php foreach ( $ids as $id ): ?>
                                     <div class="swiper-slide">
-                                        <?php echo wp_get_attachment_image( $id, 'large', false, ['loading' => 'lazy'] ); ?>
+                                        <?php echo wp_get_attachment_image( $id, 'large', false ); ?>
                                     </div>
                                 <?php endforeach; ?>
                             </div>
@@ -134,27 +149,7 @@ if ( have_posts() ) :
 				</div>
 			</div>
 		</div>
-
-        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>                        
-        <script>
-            var swiper = new Swiper(".mySwiper", {
-            spaceBetween: 10,
-            slidesPerView: 4,
-            freeMode: true,
-            watchSlidesProgress: true,
-            });
-            var swiper2 = new Swiper(".mySwiper2", {
-            spaceBetween: 10,
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-            thumbs: {
-                swiper: swiper,
-            },
-            });
-        </script>
-		<?php
+<?php
 	endwhile;
 endif;
 

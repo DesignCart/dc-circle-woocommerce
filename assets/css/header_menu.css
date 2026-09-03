@@ -1,0 +1,70 @@
+/* BANER MENU */
+.dc-nav-baner{
+    position:absolute;
+    top:0px;
+    left:0px;
+    right:0px;
+	backdrop-filter: blur(10px);
+    z-index: 99;
+}
+
+.dc-menu {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	gap: 40px;
+	position: relative;
+}
+
+.dc-menu.dc-menu-subpage{
+
+}
+
+.dc-menu > li {
+	position: relative;
+}
+
+.dc-menu > li > a {
+	display: block;
+	padding: 15px 10px;
+	text-decoration: none;
+	font-weight: 600;
+	transition: color 0.2s;
+}
+
+.dc-menu > li:hover > a {
+
+}
+
+/* Submenu */
+.dc-menu li ul {
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+	background: white;
+	border-radius: 8px;
+	padding: 10px 0;
+	box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+	min-width: 220px;
+	display: none;
+	z-index: 100;
+}
+
+.dc-menu li:hover > ul {
+	display: block;
+}
+
+.dc-menu li ul li {
+	display: block;
+	text-align: left;
+}
+
+.dc-menu li ul li a {
+	display: block;
+	padding: 10px 20px;
+	text-decoration: none;
+	transition: background-color 0.2s, color 0.2s;
+}

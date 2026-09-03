@@ -1,3 +1,10 @@
+/**
+ * Slide cart interactions.
+ *
+ * @package dc-circle
+ * @author Paweł Nosko
+ * @copyright 2026 Design Cart
+ */
 jQuery(function($) {
 	// === OPEN/CLOSE ===
 	function openSlidecart() {
@@ -27,7 +34,7 @@ jQuery(function($) {
 	}
 
 	// === TOGGLE ===
-	$(document).on('click', '#cart-toggle, .dc-slidecart-toggle', function(e){
+	$(document).on('click', '.dc-slidecart-toggle', function(e){
 		e.preventDefault();
 		openSlidecart();
 	});
@@ -62,21 +69,22 @@ jQuery(document).ready(function($) {
 	const updateCartQuantity = (cartItemKey, quantity) => {
 		$.ajax({
 			type: 'POST',
-			url: wc_add_to_cart_params.ajax_url,
+			url: dcCircleCart.ajaxUrl,
 			data: {
-				action: 'designcart_update_cart_item_quantity',
+				action: 'dc_circle_update_cart_item_quantity',
 				cart_item_key: cartItemKey,
 				quantity: quantity,
+				nonce: dcCircleCart.nonce,
 			},
 			success: function(response) {
 				if (response.success) {
 					$(document.body).trigger('wc_fragment_refresh');
 				} else {
-					alert(response.data || 'Nie udało się zaktualizować koszyka.');
+					alert(response.data || dcCircleCart.cartUpdateFailed);
 				}
 			},
 			error: function() {
-				alert('Wystąpił błąd przy aktualizacji koszyka.');
+				alert(dcCircleCart.cartUpdateError);
 			}
 		});
 	};

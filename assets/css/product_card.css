@@ -1,0 +1,212 @@
+/** PRODUCTS CATEGORY ***/
+select,
+.dc-products-sort select.orderby{
+	border-radius: 15px;
+    padding: 10px;
+}
+
+.dc-products-sort{
+    display: flex;
+    align-items: center;
+}
+
+/** PRODUCT IN CATEGORY **/
+.dc-card.card{
+	border-radius: 12px;
+	box-shadow: rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    border-width: 2px;
+    transition: all 0.5s ease;
+    padding: 15px;
+}
+.dc-card.card:hover{
+    box-shadow: 2px 2px 15px 0 rgba(0,0,0,0.2);
+}
+a.dc-btn-addcart
+button.dc-btn-addcart{
+    border-radius:15px !important;
+}
+
+.dc-title{
+    width: calc(100% - 16px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) #respond input#submit, .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) a.button, .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) button.button, .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) input.button, :where(body:not(.woocommerce-block-theme-has-button-styles)):where(:not(.edit-post-visual-editor)) .woocommerce #respond input#submit, :where(body:not(.woocommerce-block-theme-has-button-styles)):where(:not(.edit-post-visual-editor)) .woocommerce a.button, :where(body:not(.woocommerce-block-theme-has-button-styles)):where(:not(.edit-post-visual-editor)) .woocommerce button.button, :where(body:not(.woocommerce-block-theme-has-button-styles)):where(:not(.edit-post-visual-editor)) .woocommerce input.button {
+    font-size: 100%;
+    margin: 0;
+    line-height: 1;
+    cursor: pointer;
+    position: relative;
+    text-decoration: none;
+    overflow: visible;
+    padding: .618em 1em;
+    font-weight: 400;
+    border-radius: 15px;
+    left: auto;
+    border: 0;
+    display: inline-block;
+    background-image: none;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+/* Miniatura + hover */
+.dc-thumb-wrap{ overflow:hidden; }
+.dc-thumb-main,
+.dc-thumb-hover{ object-fit: cover; }
+.dc-thumb-hover{ opacity:0; transition: opacity .2s ease; }
+.dc-card:hover .dc-thumb-hover{ opacity:1; }
+
+/* Badges */
+.dc-badge{
+	position:absolute; top:10px; left:10px;
+	border-radius: 999px;
+	padding: .25rem .6rem; font-size:.75rem; font-weight:600;
+}
+
+/*PRODUCT CARD */
+.dc-product-title{
+
+}
+
+.owl-carousel .owl-item img {
+  display: block;
+  max-width: 100% !important;
+  height:auto;
+}
+
+.dc-qty-btn {
+    border: none;
+    width: 30px !important;
+    min-width: 30px !important;
+    max-width: 30px !important;
+    height: 30px;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+    line-height: 0px;
+}
+
+.dc-qty-input {
+    max-width: 70px;
+    width: 70px;
+    height: 30px;
+    text-align: center !important;
+    border: none !important;
+    font-size: 14px;
+    border-radius: 0 !important;
+}
+
+table.variations { border-collapse: separate; }
+table.variations tr { display: table-row !important; }
+table.variations th,
+table.variations td { display: table-cell !important; vertical-align: middle !important; }
+
+.dc-atc-row{
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	flex-wrap: nowrap;
+}
+
+.product_meta > span {
+    display: block;
+    margin-bottom: 4px; /* odstęp między liniami */
+}
+
+.product_meta > span:last-child {
+    margin-bottom: 0;
+}
+
+/* Domyślne WooCommerce quantity */
+.dc-atc-row .quantity{ width:132px; margin:0; }
+.dc-atc-row .quantity .qty{ width:100%; }
+
+/* Jeśli używasz własnego komponentu dc-qty-wrapper */
+.dc-atc-row .dc-qty-wrapper{ width:132px; }
+.dc-atc-row .dc-qty-input{ width:100%; }
+
+/* Żeby tekst na przycisku się nie łamał */
+.dc-atc-row .single_add_to_cart_button{ white-space: nowrap; }
+
+.product_meta span:first{
+    display:block;
+}
+.dc-card-product-image{
+    position: relative;
+}
+
+.dc-wishlist-badge{
+    position: absolute;
+    top:0px;
+    right:0px;
+    z-index: 10;
+    text-align: right;
+}
+/* rodzic musi być relative */
+.woocommerce ul.products li.product { position: relative; }
+
+/* samo serduszko jako overlay w prawym górnym rogu */
+.woocommerce ul.products li.product .yith-add-to-wishlist-button-block{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  margin: 0 !important;
+  width: auto;
+  display: inline-flex;
+}
+
+/* wyłącz centrowanie z wcześniejszych reguł */
+.yith-add-to-wishlist-button-block .yith-wcwl-add-to-wishlist-button{
+  margin: 0 !important;
+  justify-content: center;
+}
+
+/* ukryj napis */
+.yith-add-to-wishlist-button-block .yith-wcwl-add-to-wishlist-button__label{
+  display:none !important;
+}
+
+
+.yith-add-to-wishlist-button-block .yith-wcwl-add-to-wishlist-button__label{
+  display: none !important;
+}
+
+.yith-wcwl-add-to-wishlist-button.yith-wcwl-add-to-wishlist-button--anchor {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;        /* średnica kółka */
+    height: 40px;
+    background-color: #fff;  /* tło kółka */
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    margin: 0 !important;
+    padding: 0;
+    transition: all 0.25s ease-in-out;
+}
+#dc-products-listing .dc-qty-btn, .dc-qty-btn {
+    background-color: #f4f0e5 !important;
+    color: #6e5335 !important;
+}
+.dc-qty-minus {
+    border-radius: 0 !important;
+}
+
+.dc-btn-addcart{
+    white-space: nowrap;       /* zakaz łamania */
+    display: inline-flex;      /* ikona + tekst w jednej linii */
+    align-items: center;       /* wyśrodkowanie pionowe */
+    gap: 6px;
+}
+#home-products .add_to_cart_button,
+#home-products .dc_product_info_button{
+    padding: .618em 1em;
+    border-radius: 15px;
+}

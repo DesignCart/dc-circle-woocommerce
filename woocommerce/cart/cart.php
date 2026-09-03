@@ -1,5 +1,19 @@
 <?php
-
+/**
+ * Cart Page
+ *
+ * This template can be overridden by copying it to yourtheme/woocommerce/cart/cart.php.
+ *
+ * HOWEVER, on occasion WooCommerce will need to update template files and you
+ * (the theme developer) will need to copy the new files to your theme to
+ * maintain compatibility. We try to do this as little as possible, but it does
+ * happen. When this occurs the version of the template file will be bumped and
+ * the readme will list any important changes.
+ *
+ * @see     https://woocommerce.com/document/template-structure/
+ * @package WooCommerce\Templates
+ * @version 10.8.0
+ */
 
 defined( 'ABSPATH' ) || exit;
 
@@ -45,7 +59,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 										do_action( 'woocommerce_after_cart_item_name', $cart_item, $cart_item_key );
 										echo wc_get_formatted_cart_item_data( $cart_item );
 										if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) ) {
-											echo wp_kses_post( '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'woocommerce' ) . '</p>' );
+											echo wp_kses_post( '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'dc-circle' ) . '</p>' );
 										}
 									?>
 								</div>
@@ -57,7 +71,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 							</div>
 							<div class="dc-col-interface">
 								<!-- 3: quantity -->
-								<div class="dc-cart-col dc-col-qty product-quantity" data-title="<?php esc_attr_e('Quantity', 'woocommerce'); ?>">
+								<div class="dc-cart-col dc-col-qty product-quantity" data-title="<?php esc_attr_e('Quantity', 'dc-circle'); ?>">
 									<div class="dc-qty-wrapper">
 
 										<?php
@@ -78,7 +92,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 											max="100"
 											name="cart[<?php echo esc_attr( $cart_item_key ); ?>][qty]"
 											value="<?php echo esc_attr( $cart_item['quantity'] ); ?>"
-											title="<?php esc_attr_e( 'Qty', 'woocommerce' ); ?>"
+											title="<?php esc_attr_e( 'Qty', 'dc-circle' ); ?>"
 											size="4"
 											inputmode="numeric"
 											data-cart_item_key="<?php echo esc_attr( $cart_item_key ); ?>"
@@ -92,9 +106,9 @@ do_action( 'woocommerce_before_cart' ); ?>
 									<?php
 										echo apply_filters( 'woocommerce_cart_item_remove_link',
 											sprintf(
-												'<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s"><img src="%s/img/trash.svg" alt="Usuń" class="dc-cart-remove-icon" /></a>',
+												'<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s"><img src="%s/img/trash.svg" alt="' . esc_attr__( 'Remove', 'dc-circle' ) . '" class="dc-cart-remove-icon" /></a>',
 												esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
-												esc_attr( sprintf( __( 'Remove %s from cart', 'woocommerce' ), wp_strip_all_tags( $product_name ) ) ),
+												esc_attr( sprintf( __( 'Remove %s from cart', 'dc-circle' ), wp_strip_all_tags( $product_name ) ) ),
 												esc_attr( $cart_item['product_id'] ),
 												esc_attr( $_product->get_sku() ),
 												get_stylesheet_directory_uri()
@@ -115,12 +129,12 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 		<?php if ( wc_coupons_enabled() ) { ?>
 			<div class="coupon">
-				<label for="coupon_code" class="screen-reader-text"><?php esc_html_e( 'Coupon:', 'woocommerce' ); ?></label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" /> <button type="submit" class="button<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?>"><?php esc_html_e( 'Apply coupon', 'woocommerce' ); ?></button>
+				<label for="coupon_code" class="screen-reader-text"><?php esc_html_e( 'Coupon:', 'dc-circle' ); ?></label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'dc-circle' ); ?>" /> <button type="submit" class="button<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'dc-circle' ); ?>"><?php esc_html_e( 'Apply coupon', 'dc-circle' ); ?></button>
 				<?php do_action( 'woocommerce_cart_coupon' ); ?>
 			</div>
 		<?php } ?>
 
-		<button type="submit" class="button<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>"><?php esc_html_e( 'Update cart', 'woocommerce' ); ?></button>
+		<button type="submit" class="button<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'dc-circle' ); ?>"><?php esc_html_e( 'Update cart', 'dc-circle' ); ?></button>
 
 		<?php do_action( 'woocommerce_cart_actions' ); ?>
 
@@ -149,7 +163,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 <?php do_action( 'woocommerce_after_cart' ); ?>
 
 <div id="page-cart-featureds" class="page-cart-featureds">
-	<h2>Uzupełnij pielęgnację</h2>
+	<h2><?php esc_html_e( 'Recommended products', 'dc-circle' ); ?></h2>
 
 	<div class="page-cart-featureds-carousel-container">
 	<?php
@@ -189,25 +203,6 @@ do_action( 'woocommerce_before_cart' ); ?>
 						echo '</div>';
 					}
 					echo '</div>';
-					// inicjalizacja Owl (jeśli jeszcze nie masz)
-					?>
-					<script>
-					jQuery(function($){
-						$('.dc-cart-products-carousel').owlCarousel({
-							items: 5,
-							margin:10,
-							loop:true,
-							nav:true,
-        					navText: ['<i class="fas fa-angle-left"></i>', '<i class="fas fa-angle-right"></i>'],
-							responsive:{
-							0:{ items:2 },
-							600:{ items:3 },
-							1000:{ items:5 }
-							}
-						});
-					});
-					</script>
-					<?php
 				}
 			}
 		}

@@ -1,3 +1,10 @@
+/**
+ * Theme JavaScript.
+ *
+ * @package dc-circle
+ * @author Paweł Nosko
+ * @copyright 2026 Design Cart
+ */
 jQuery(document).ready(function($) {
     var $panel = $('#dc-mobile-panel');
     var $overlay = $('.dc-mobile-overlay');

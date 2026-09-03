@@ -1,4 +1,20 @@
 <?php
+/**
+ * Product loop item
+ *
+ * This template can be overridden by copying it to yourtheme/woocommerce/content-product.php.
+ *
+ * HOWEVER, on occasion WooCommerce will need to update template files and you
+ * (the theme developer) will need to copy the new files to your theme to
+ * maintain compatibility. We try to do this as little as possible, but it does
+ * happen. When this occurs the version of the template file will be bumped and
+ * the readme will list any important changes.
+ *
+ * @see     https://woocommerce.com/document/template-structure/
+ * @package WooCommerce\Templates
+ * @version 9.4.0
+ */
+
     defined('ABSPATH') || exit;
 
     global $product, $post;
@@ -24,15 +40,14 @@
                     if ( $hover_id ) {
                         echo wp_get_attachment_image( $hover_id, 'woocommerce_thumbnail', false, [
                             'class' => 'dc-thumb-hover object-fit-cover position-absolute top-0 start-0 w-100 h-100',
-                            'loading' => 'lazy',
                         ] );
                     }
                     ?>
 
                     <?php if ( ! $in_stock ) : ?>
-                        <span class="dc-badge dc-badge--oos">Brak w magazynie</span>
+                        <span class="dc-badge dc-badge--oos"><?php esc_html_e( 'Out of stock', 'dc-circle' ); ?></span>
                     <?php elseif ( $is_on_sale ) : ?>
-                        <span class="dc-badge dc-badge--sale"><?php esc_html_e('Wyprzedaż','twój-motyw'); ?></span>
+                        <span class="dc-badge dc-badge--sale"><?php esc_html_e( 'Sale', 'dc-circle' ); ?></span>
                     <?php endif; ?>
 
                     <div class="dc-wishlist-badge">
@@ -68,7 +83,7 @@
                             </div>
                         <?php else : ?>
                             <a href="<?php the_permalink(); ?>" class="button dc-btn dc-style-2 dc-btn-addcart">
-                                <i class="fa fa-search"></i> <?php esc_html_e('Zobacz produkt','twój'); ?>
+                                <i class="fa fa-search"></i> <?php esc_html_e( 'View product', 'dc-circle' ); ?>
                             </a>
                         <?php endif; ?>
                     </div>

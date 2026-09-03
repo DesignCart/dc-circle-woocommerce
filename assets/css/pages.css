@@ -1,0 +1,73 @@
+/** PAGES **/
+.dc-page h1{
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.wp-block-columns.dc-divider {
+    position: relative;
+}
+
+.wp-block-columns.dc-divider::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.wp-block-columns.dc-divider::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.wp-block-columns.dc-divider.dc-divider-30::before {
+    left: 30%;
+}
+
+.wp-block-columns.dc-divider.dc-divider-30::after {
+    left: 30%;
+}
+
+/***  CONTACT ***/
+.contact-icon .wp-block-media-text__media img{
+    width: auto;
+    max-width: 100%;
+}
+
+.contact-icon.wp-block-media-text{
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.contact-icon.wp-block-media-text p{
+    margin:0px;
+}
+
+@media (max-width: 781px){
+    .dc-divider::before,
+    .dc-divider::after{
+        display: none;
+    }
+
+    .wp-block-image .alignright{
+        float: none;
+        margin: 0px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .wp-block-image{
+        text-align: center;
+    }
+}

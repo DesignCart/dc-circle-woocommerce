@@ -1,4 +1,20 @@
 <?php
+/**
+ * Mini-cart
+ *
+ * This template can be overridden by copying it to yourtheme/woocommerce/cart/mini-cart.php.
+ *
+ * HOWEVER, on occasion WooCommerce will need to update template files and you
+ * (the theme developer) will need to copy the new files to your theme to
+ * maintain compatibility. We try to do this as little as possible, but it does
+ * happen. When this occurs the version of the template file will be bumped and
+ * the readme will list any important changes.
+ *
+ * @see     https://woocommerce.com/document/template-structure/
+ * @package WooCommerce\Templates
+ * @version 10.0.0
+ */
+
 defined( 'ABSPATH' ) || exit;
 
 do_action( 'woocommerce_before_mini_cart' ); ?>
@@ -40,8 +56,8 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 							</div>
 							<div class="dc-cart-price-remove">
 								<span class="dc-cart-price"><?php echo $product_price; ?></span>
-								<a href="<?php echo esc_url( wc_get_cart_remove_url( $cart_item_key ) ); ?>" class="dc-cart-remove remove remove_from_cart_button" aria-label="<?php esc_attr_e( 'Remove this item', 'woocommerce' ); ?>">
-									<img class="dc-trash-icon" src="<?php echo $theme_url; ?>/assets/images/trash.svg" alt="trash icon" />
+								<a href="<?php echo esc_url( wc_get_cart_remove_url( $cart_item_key ) ); ?>" class="dc-cart-remove remove remove_from_cart_button" aria-label="<?php esc_attr_e( 'Remove this item', 'dc-circle' ); ?>">
+									<img class="dc-trash-icon" src="<?php echo esc_url( $theme_url . '/assets/images/trash.svg' ); ?>" alt="<?php esc_attr_e( 'Remove item', 'dc-circle' ); ?>" />
 								</a>
 							</div>
 							<div class="dc-qty-wrapper">
@@ -92,7 +108,7 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 
 <?php else : ?>
 
-	<p class="woocommerce-mini-cart__empty-message"><?php esc_html_e( 'No products in the cart.', 'woocommerce' ); ?></p>
+	<p class="woocommerce-mini-cart__empty-message"><?php esc_html_e( 'No products in the cart.', 'dc-circle' ); ?></p>
 
 <?php endif; ?>
 

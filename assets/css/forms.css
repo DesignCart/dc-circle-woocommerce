@@ -1,0 +1,259 @@
+.form-submit .submit:hover{ filter: brightness(1.05); }
+/*** CONTACT FORM ***/
+.dc-style-contact .wpcf7-form{
+  --dc-bg: #f4f0e5;
+  --dc-bg: #6e5335;
+  --dc-border: rgba(110,83,53,.25);
+  --dc-border-strong: rgba(110,83,53,.45);
+  --dc-shadow: 0 6px 20px rgba(0,0,0,.06);
+
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+  border: 1px solid var(--dc-border);
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: var(--dc-shadow);
+}
+
+/* Siatka: na >=768px dwa pola obok, textarea i submit pełna szerokość */
+@media (min-width: 768px){
+  .dc-style-contact .wpcf7-form{
+    grid-template-columns: 1fr 1fr;
+  }
+  .dc-style-contact .wpcf7-form p:nth-last-of-type(2),   /* wiersz z przyciskiem */
+  .dc-style-contact .wpcf7-form p:has(textarea){         /* wiersz z wiadomością */
+    grid-column: 1 / -1;
+  }
+}
+
+/* Reset odstępów wewnątrz <p> */
+.dc-style-contact .wpcf7-form p{
+  margin: 0;
+}
+
+/* Etykiety nad polami */
+.dc-style-contact .wpcf7-form label{
+  display: block;
+  font-size: .92rem;
+  color: #4b4b4b;
+  margin-bottom: .35rem;
+}
+
+/* Pola wejściowe */
+.dc-style-contact .wpcf7-form .wpcf7-form-control[type="text"],
+.dc-style-contact .wpcf7-form .wpcf7-form-control[type="email"],
+.dc-style-contact .wpcf7-form .wpcf7-form-control[type="url"],
+.dc-style-contact .wpcf7-form .wpcf7-text,
+.dc-style-contact .wpcf7-form .wpcf7-email,
+.dc-style-contact .wpcf7-form .wpcf7-textarea{
+  width: 100%;
+  border: 1px solid var(--dc-border);
+  border-radius: 10px;
+  padding: .7rem .85rem;
+  background: #fff;
+  color: #1d1d1d;
+  line-height: 1.4;
+  transition: border-color .15s ease, box-shadow .15s ease, background-color .2s ease;
+  box-sizing: border-box;
+}
+
+.dc-style-contact .wpcf7-form .wpcf7-textarea{
+  min-height: 160px;
+  resize: vertical;
+}
+
+/* Focus */
+.dc-style-contact .wpcf7-form .wpcf7-form-control:focus{
+  outline: 0;
+  border-color: var(--dc-border-strong);
+  box-shadow: 0 0 0 4px rgba(110,83,53,.12);
+}
+
+/* Błędy walidacji */
+.dc-style-contact .wpcf7-form .wpcf7-not-valid{
+  border-color: #c43b3b !important;
+}
+.dc-style-contact .wpcf7-form .wpcf7-not-valid-tip{
+  display: block;
+  margin-top: .35rem;
+  font-size: .85rem;
+  color: #c43b3b;
+}
+
+/* Komunikaty po wysłaniu */
+.dc-style-contact .wpcf7 form .wpcf7-response-output{
+  margin: 10px 0 0;
+  border-radius: 10px;
+  border-width: 1px;
+  padding: .75rem .9rem;
+}
+.dc-style-contact .wpcf7 form.invalid .wpcf7-response-output{ border-color:#c43b3b; color:#c43b3b; background:#ffecec; }
+.dc-style-contact .wpcf7 form.sent    .wpcf7-response-output{ border-color:#4aa564; color:#2c7a43; background:#eaf7ef; }
+
+/* Przycisk wyślij */
+.dc-style-contact .wpcf7-form .wpcf7-submit{
+  display: inline-block;
+  background: var(--dc-bg);
+  color: var(--dc-bg);
+  border: 1px solid var(--dc-border);
+  border-radius: 10px;
+  padding: .65rem 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .06s ease, filter .2s ease, box-shadow .2s ease;
+}
+.dc-style-contact .wpcf7-form .wpcf7-submit:hover{ filter: brightness(.98); }
+.dc-style-contact .wpcf7-form .wpcf7-submit:active{ transform: translateY(1px); }
+
+/* Spinner CF7 w naszej tonacji */
+.dc-style-contact .wpcf7-spinner{
+  margin-left: .5rem;
+  filter: hue-rotate(20deg) saturate(0.8);
+}
+
+/* Linki w formularzu (np. e-mail) */
+.dc-style-contact .wpcf7-form a{
+  color: var(--dc-bg);
+  text-decoration: underline;
+}
+.dc-style-contact .wpcf7-form a:hover{ text-decoration: none; }
+
+/* Dostępność: wygodne klikanie w label */
+.dc-style-contact .wpcf7-form .wpcf7-form-control-wrap{
+  display: block;
+}
+:root{
+  --dc-brown:#6e5335;           /* kolor motywu (tło stopki) */
+  --dc-pill-border:#fff;        /* kolor obramowania kapsuły */
+  --dc-pill-fill:rgba(255,255,255,.14); /* wypełnienie inputu */
+  --dc-pill-focus:rgba(255,255,255,.2);
+  --dc-btn-bg:#fff;
+  --dc-btn-bg:#6e5335;
+}
+
+/* Kontener (pilnujemy, żeby nic nie wychodziło z kolumny) */
+.dc-newsletter{ width:100%; max-width:100%; color:#fff; }
+
+/* Formularz jako kolumna: rząd kapsuły + rząd checkboxa */
+.dc-newsletter__form{
+  display:flex; flex-direction:column; align-items:flex-start; gap:10px;
+  width:100%; max-width:100%;
+  text-align:left;
+  margin:0; padding:0;
+}
+
+/* ——— RZĄD KAPSUŁY ——— */
+.dc-newsletter__row{
+  display:flex; align-items:stretch; gap:0;
+  width:100%; max-width:100%;
+  /* kapsuła */
+  border:1.5px solid var(--dc-pill-border);
+  border-radius:999px;
+  overflow:hidden;            /* ścina rogi dzieci, żeby kapsuła była idealna */
+  background:transparent;
+  position:relative;
+}
+
+/* widoczna etykieta jako placeholder po lewej (dla dostępności i makiety) */
+.dc-newsletter__label{
+  position:absolute;
+  left:18px; top:50%;
+  transform:translateY(-50%);
+  pointer-events:none;
+  color:rgba(255,255,255,.85);
+  font-size:16px;
+}
+
+/* INPUT — zajmuje całą lewą część, elastyczny i może się mocno zwężać */
+.dc-newsletter__email{
+  flex:1 1 auto; min-width:0;      /* klucz: pozwala wejść poniżej naturalnej szerokości */
+  height:56px; line-height:56px;
+  padding:0 18px 0 72px;           /* miejsce na „etykietę” po lewej */
+  border:none;
+  background:var(--dc-pill-fill);
+  color:#fff; font-size:16px;
+}
+
+/* kiedy user pisze/focus — przyciemnij wypełnienie i ukryj etykietę */
+.dc-newsletter__email:focus{
+  background:var(--dc-pill-focus);
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+.dc-newsletter__email:not(:placeholder-shown) + .dc-newsletter__submit,
+.dc-newsletter__email:focus + .dc-newsletter__submit{}
+/* chowamy label gdy input ma focus albo coś wpisano */
+.dc-newsletter__email:focus ~ .dc-newsletter__label,
+.dc-newsletter__email:not(:placeholder-shown) ~ .dc-newsletter__label{
+  opacity:0; visibility:hidden;
+}
+
+/* BUTTON — prawa część kapsuły, stała szerokość minimalna */
+.dc-newsletter__submit{
+  flex:0 0 auto;
+  height:56px; padding:0 26px;
+  background:var(--dc-btn-bg); color:var(--dc-btn-bg);
+  border:none; cursor:pointer; font-weight:600; font-size:16px;
+  white-space:nowrap;
+  transition:filter .2s, transform .06s;
+}
+.dc-newsletter__submit:hover{ filter:brightness(.97); }
+.dc-newsletter__submit:active{ transform:translateY(1px); }
+
+/* ——— CHECKBOX ——— */
+.dc-newsletter__privacy{ width:100%; color:#fff; }
+.dc-newsletter__privacy label{ display:inline-flex; align-items:center; gap:8px; }
+.dc-newsletter__privacy input[type="checkbox"]{ accent-color:#f5d28a; }
+
+#dc-products-listing .dc-qty-btn, .dc-qty-btn {
+    background-color: #f4f0e5 !important;
+    color: #6e5335 !important;
+}
+.dc-qty-minus {
+    border-radius: 0 !important;
+}
+
+.dc-btn-addcart{
+    white-space: nowrap;       /* zakaz łamania */
+    display: inline-flex;      /* ikona + tekst w jednej linii */
+    align-items: center;       /* wyśrodkowanie pionowe */
+    gap: 6px;
+}
+
+.woocommerce:where(body:not(.woocommerce-uses-block-theme)) div.product p.price,
+.woocommerce:where(body:not(.woocommerce-uses-block-theme)) div.product span.price{
+  color:var(--dc-btn-bg) !important;
+}
+
+/* lekko ciaśniejszy przycisk przy węższych kolumnach */
+@media (max-width: 1280px){
+  .dc-newsletter__submit{ padding:0 20px; }
+}
+
+/* Gdy kolumna staje się wąska, łamiemy kapsułę na 2 rzędy
+   tak, aby NIC nie wystawało poza .col-*. Obie części zostają „pigułami”. */
+@media (max-width: 576px){
+  .dc-newsletter__row{
+    flex-wrap:wrap; gap:8px;
+    border:none; border-radius:0;  /* usuwamy wspólną ramkę kapsuły */
+  }
+  .dc-newsletter__email{
+    flex:1 1 100%;
+    border:1.5px solid var(--dc-pill-border);
+    border-radius:999px;
+    padding-left:18px;        /* label znika, więc zwykły padding */
+    height:52px; line-height:52px;
+  }
+  .dc-newsletter__submit{
+    border:1.5px solid var(--dc-pill-border);
+    border-radius:999px;
+    height:52px; padding:0 18px;
+  }
+  .dc-newsletter__label{ display:none; }
+}
+
+/* Wąskie ekrany */
+@media (max-width: 380px){
+  .dc-newsletter__submit{ padding:0 16px; }
+}

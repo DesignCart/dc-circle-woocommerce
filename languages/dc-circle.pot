@@ -1,0 +1,703 @@
+# Copyright (C) 2026 Paweł Nosko / Design Cart
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: DC Circle 1.0.3\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/dc-circle\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-09-03T05:14:19+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: dc-circle\n"
+
+#. Theme Name of the theme
+#: style.css
+#: inc/blocks.php:52
+#: inc/default-content.php:124
+msgid "DC Circle"
+msgstr ""
+
+#. Theme URI of the theme
+#: style.css
+msgid "https://www.designcart.pl/laboratorium/231-dc-circle-darmowy-szablon-dla-woocommerce.html"
+msgstr ""
+
+#. Description of the theme
+#: style.css
+msgid "Custom WooCommerce theme for DC Circle."
+msgstr ""
+
+#. Author of the theme
+#: style.css
+msgid "Paweł Nosko / Design Cart"
+msgstr ""
+
+#. Author URI of the theme
+#: style.css
+msgid "https://www.designcart.pl"
+msgstr ""
+
+#: archive.php:49
+#: category.php:40
+msgid "Read more..."
+msgstr ""
+
+#: archive.php:67
+#: category.php:52
+#: single.php:112
+msgid "No posts found."
+msgstr ""
+
+#. translators: %s: post title
+#: comments.php:25
+#, php-format
+msgid "One comment on &ldquo;%s&rdquo;"
+msgstr ""
+
+#. translators: 1: comment count, 2: post title
+#: comments.php:31
+#, php-format
+msgctxt "comments title"
+msgid "%1$s comment on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s comments on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:57
+msgid "Comments are closed."
+msgstr ""
+
+#: footer.php:34
+#: header.php:83
+#: header.php:126
+msgid "Menu"
+msgstr ""
+
+#. translators: 1: site link, 2: author link
+#: footer.php:63
+#, php-format
+msgid "All rights reserved %1$s - Copyright &copy; | Designed by %2$s"
+msgstr ""
+
+#: header.php:23
+msgid "Skip to content"
+msgstr ""
+
+#: header.php:52
+#: header.php:174
+#: inc/default-content.php:192
+msgid "My account"
+msgstr ""
+
+#: header.php:55
+#: header.php:177
+msgid "Wishlist"
+msgstr ""
+
+#: header.php:58
+#: header.php:180
+#: inc/default-content.php:196
+msgid "Cart"
+msgstr ""
+
+#: header.php:137
+#: inc/blocks.php:64
+#: inc/theme-options.php:109
+msgid "Welcome to our store"
+msgstr ""
+
+#: header.php:138
+#: inc/blocks.php:68
+#: inc/theme-options.php:119
+msgid "Discover curated products for everyday living."
+msgstr ""
+
+#: header.php:141
+#: inc/blocks.php:73
+#: inc/theme-options.php:129
+msgid "Shop now"
+msgstr ""
+
+#: header.php:147
+#: inc/theme-options.php:149
+msgid "Learn more"
+msgstr ""
+
+#: inc/blocks.php:23
+msgid "Lead text"
+msgstr ""
+
+#: inc/blocks.php:31
+msgid "DC Circle button"
+msgstr ""
+
+#: inc/blocks.php:39
+msgid "Soft card"
+msgstr ""
+
+#: inc/blocks.php:59
+msgid "Intro with call to action"
+msgstr ""
+
+#: inc/blocks.php:60
+msgid "A simple heading, supporting text, and a button."
+msgstr ""
+
+#: inc/default-content.php:127
+msgid "DC Circle is a free WooCommerce theme by Design Cart. Customize colors, banners, and product sliders to launch a modern online store quickly."
+msgstr ""
+
+#: inc/default-content.php:137
+#: inc/default-content.php:200
+msgid "Contact"
+msgstr ""
+
+#: inc/default-content.php:140
+msgid "DC Circle Demo Store"
+msgstr ""
+
+#: inc/default-content.php:141
+msgid "123 Commerce Street"
+msgstr ""
+
+#: inc/default-content.php:142
+msgid "New York, NY 10001, USA"
+msgstr ""
+
+#: inc/default-content.php:143
+msgid "Phone:"
+msgstr ""
+
+#: inc/default-content.php:144
+msgid "Email:"
+msgstr ""
+
+#: inc/default-content.php:145
+msgid "Hours: Mon–Fri 9:00 AM–5:00 PM"
+msgstr ""
+
+#: inc/default-content.php:155
+msgid "We accept"
+msgstr ""
+
+#: inc/default-content.php:158
+msgid "Visa, Mastercard, PayPal, Apple Pay, and Google Pay."
+msgstr ""
+
+#: inc/default-content.php:176
+msgid "Footer Menu"
+msgstr ""
+
+#: inc/default-content.php:188
+msgid "Shop"
+msgstr ""
+
+#: inc/enqueue.php:78
+msgid "Could not update the cart."
+msgstr ""
+
+#: inc/enqueue.php:79
+msgid "An error occurred while updating the cart."
+msgstr ""
+
+#: inc/setup.php:68
+msgid "Main menu"
+msgstr ""
+
+#: inc/setup.php:69
+msgid "Footer menu"
+msgstr ""
+
+#: inc/setup.php:77
+msgid "Below banner widget"
+msgstr ""
+
+#: inc/setup.php:79
+msgid "Content below the banner."
+msgstr ""
+
+#: inc/setup.php:89
+msgid "Below new arrivals widget"
+msgstr ""
+
+#: inc/setup.php:91
+msgid "Content below new arrivals."
+msgstr ""
+
+#: inc/setup.php:101
+msgid "Below sale widget"
+msgstr ""
+
+#: inc/setup.php:103
+msgid "Content below sale items."
+msgstr ""
+
+#: inc/setup.php:113
+msgid "Below bestsellers widget"
+msgstr ""
+
+#: inc/setup.php:115
+msgid "Content below bestsellers."
+msgstr ""
+
+#: inc/setup.php:125
+msgid "Below featured widget"
+msgstr ""
+
+#: inc/setup.php:127
+msgid "Content below featured items."
+msgstr ""
+
+#: inc/setup.php:137
+msgid "Footer - left"
+msgstr ""
+
+#: inc/setup.php:139
+msgid "Footer content on the left."
+msgstr ""
+
+#: inc/setup.php:149
+msgid "Footer - center"
+msgstr ""
+
+#: inc/setup.php:151
+msgid "Footer content in the center."
+msgstr ""
+
+#: inc/setup.php:161
+msgid "Footer - right"
+msgstr ""
+
+#: inc/setup.php:163
+msgid "Footer content on the right."
+msgstr ""
+
+#: inc/setup.php:190
+msgid "WooCommerce is not available."
+msgstr ""
+
+#: inc/setup.php:194
+msgid "Invalid cart data."
+msgstr ""
+
+#: inc/theme-options.php:67
+msgid "Top info bar"
+msgstr ""
+
+#: inc/theme-options.php:77
+msgid "Top bar text"
+msgstr ""
+
+#: inc/theme-options.php:84
+msgid "Logo"
+msgstr ""
+
+#: inc/theme-options.php:90
+msgid "Hero banner"
+msgstr ""
+
+#: inc/theme-options.php:96
+msgid "Homepage banner"
+msgstr ""
+
+#: inc/theme-options.php:103
+msgid "Homepage banner (mobile)"
+msgstr ""
+
+#: inc/theme-options.php:113
+msgid "H1 heading"
+msgstr ""
+
+#: inc/theme-options.php:123
+msgid "Subtitle"
+msgstr ""
+
+#: inc/theme-options.php:137
+msgid "Button 1 text"
+msgstr ""
+
+#: inc/theme-options.php:142
+msgid "Button 1 URL"
+msgstr ""
+
+#: inc/theme-options.php:143
+msgid "Leave empty to link to the shop page."
+msgstr ""
+
+#: inc/theme-options.php:157
+msgid "Button 2 text"
+msgstr ""
+
+#: inc/theme-options.php:162
+msgid "Button 2 URL"
+msgstr ""
+
+#: inc/theme-options.php:163
+msgid "Leave empty to link to the homepage."
+msgstr ""
+
+#: inc/theme-options.php:169
+msgid "Colors"
+msgstr ""
+
+#: inc/theme-options.php:182
+#, php-format
+msgid "Button style %d background"
+msgstr ""
+
+#: inc/theme-options.php:187
+#, php-format
+msgid "Button style %d text"
+msgstr ""
+
+#: inc/theme-options.php:192
+#, php-format
+msgid "Button style %d background (hover)"
+msgstr ""
+
+#: inc/theme-options.php:197
+#, php-format
+msgid "Button style %d text (hover)"
+msgstr ""
+
+#: inc/theme-options.php:204
+msgid "Main text color"
+msgstr ""
+
+#: inc/theme-options.php:210
+msgid "Footer background"
+msgstr ""
+
+#: inc/theme-options.php:216
+msgid "Footer text color"
+msgstr ""
+
+#: inc/theme-options.php:222
+msgid "Link color"
+msgstr ""
+
+#: inc/theme-options.php:228
+msgid "Link color (hover)"
+msgstr ""
+
+#: inc/theme-options.php:234
+msgid "Product sliders"
+msgstr ""
+
+#: inc/theme-options.php:276
+msgid "Enable slider: New arrivals"
+msgstr ""
+
+#: inc/theme-options.php:283
+#: modules/product_news.php:28
+msgid "New arrivals"
+msgstr ""
+
+#: inc/theme-options.php:287
+msgid "New arrivals slider title"
+msgstr ""
+
+#: inc/theme-options.php:299
+msgid "New arrivals slider categories"
+msgstr ""
+
+#: inc/theme-options.php:311
+msgid "Enable slider: Sale"
+msgstr ""
+
+#: inc/theme-options.php:318
+#: modules/product_sales.php:30
+#: woocommerce/content-product.php:50
+msgid "Sale"
+msgstr ""
+
+#: inc/theme-options.php:322
+msgid "Sale slider title"
+msgstr ""
+
+#: inc/theme-options.php:333
+msgid "Sale slider categories"
+msgstr ""
+
+#: inc/theme-options.php:345
+msgid "Enable slider: Bestsellers"
+msgstr ""
+
+#: inc/theme-options.php:352
+#: modules/product_bestsellers.php:29
+msgid "Bestsellers"
+msgstr ""
+
+#: inc/theme-options.php:356
+msgid "Bestsellers slider title"
+msgstr ""
+
+#: inc/theme-options.php:367
+msgid "Bestsellers slider categories"
+msgstr ""
+
+#: inc/theme-options.php:379
+msgid "Enable slider: Featured"
+msgstr ""
+
+#: inc/theme-options.php:386
+msgid "Featured"
+msgstr ""
+
+#: inc/theme-options.php:390
+msgid "Featured slider title"
+msgstr ""
+
+#: inc/theme-options.php:401
+msgid "Featured slider categories"
+msgstr ""
+
+#: inc/woocommerce.php:73
+#: modules/product_bestsellers.php:85
+#: modules/product_featureds.php:85
+#: modules/product_news.php:81
+#: modules/product_sales.php:83
+msgid "Select options"
+msgstr ""
+
+#: inc/woocommerce.php:82
+msgid "View grouped products"
+msgstr ""
+
+#: inc/woocommerce.php:91
+msgid "Buy now"
+msgstr ""
+
+#: modules/product_bestsellers.php:70
+#: modules/product_featureds.php:70
+#: modules/product_news.php:67
+#: modules/product_sales.php:69
+msgid "Add to cart"
+msgstr ""
+
+#: modules/product_featureds.php:29
+msgid "Featured products"
+msgstr ""
+
+#: searchform.php:24
+msgid "Search products"
+msgstr ""
+
+#: searchform.php:25
+msgid "Enter a keyword"
+msgstr ""
+
+#: searchform.php:27
+msgid "Search"
+msgstr ""
+
+#: single.php:49
+msgid "Tags:"
+msgstr ""
+
+#: single.php:57
+msgid "&larr; Previous post"
+msgstr ""
+
+#: single.php:58
+msgid "Next post &rarr;"
+msgstr ""
+
+#: single.php:69
+msgid "No content."
+msgstr ""
+
+#: single.php:78
+msgid "Latest posts"
+msgstr ""
+
+#: single.php:106
+msgid "More"
+msgstr ""
+
+#: single.php:117
+msgid "Archives"
+msgstr ""
+
+#: template-parts/content-none.php:16
+msgid "Nothing found"
+msgstr ""
+
+#: template-parts/content-none.php:17
+msgid "It seems we cannot find what you are looking for."
+msgstr ""
+
+#: template-parts/newsletter.php:23
+msgid "E-mail"
+msgstr ""
+
+#: template-parts/newsletter.php:24
+msgid "Subscribe"
+msgstr ""
+
+#: template-parts/newsletter.php:30
+msgid "I accept the privacy policy"
+msgstr ""
+
+#: template-parts/slidecart.php:6
+msgid "Your cart"
+msgstr ""
+
+#: woocommerce/cart/cart-empty.php:35
+msgid "Return to shop"
+msgstr ""
+
+#. Translators: $s shipping destination.
+#: woocommerce/cart/cart-shipping.php:49
+#, php-format
+msgid "Shipping to %s."
+msgstr ""
+
+#: woocommerce/cart/cart-shipping.php:50
+msgid "Change address"
+msgstr ""
+
+#: woocommerce/cart/cart-shipping.php:52
+msgid "Shipping options will be updated during checkout."
+msgstr ""
+
+#: woocommerce/cart/cart-shipping.php:60
+msgid "Shipping costs are calculated during checkout."
+msgstr ""
+
+#: woocommerce/cart/cart-shipping.php:62
+msgid "Enter your address to view shipping options."
+msgstr ""
+
+#: woocommerce/cart/cart-shipping.php:65
+msgid "There are no shipping options available. Please ensure that your address has been entered correctly, or contact us if you need any help."
+msgstr ""
+
+#. Translators: $s shipping destination.
+#: woocommerce/cart/cart-shipping.php:79
+#, php-format
+msgid "No shipping options were found for %s."
+msgstr ""
+
+#: woocommerce/cart/cart-shipping.php:83
+msgid "Enter a different address"
+msgstr ""
+
+#: woocommerce/cart/cart-totals.php:24
+msgid "Cart totals"
+msgstr ""
+
+#: woocommerce/cart/cart-totals.php:29
+#: woocommerce/cart/cart-totals.php:30
+msgid "Subtotal"
+msgstr ""
+
+#: woocommerce/cart/cart-totals.php:51
+#: woocommerce/cart/cart-totals.php:52
+msgid "Shipping"
+msgstr ""
+
+#. translators: %s location.
+#: woocommerce/cart/cart-totals.php:71
+#, php-format
+msgid "(estimated for %s)"
+msgstr ""
+
+#: woocommerce/cart/cart-totals.php:97
+#: woocommerce/cart/cart-totals.php:98
+msgid "Total"
+msgstr ""
+
+#: woocommerce/cart/cart.php:62
+msgid "Available on backorder"
+msgstr ""
+
+#. translators: %s: Quantity.
+#: woocommerce/cart/cart.php:74
+#: woocommerce/global/quantity-input.php:24
+msgid "Quantity"
+msgstr ""
+
+#: woocommerce/cart/cart.php:95
+msgid "Qty"
+msgstr ""
+
+#: woocommerce/cart/cart.php:109
+msgid "Remove"
+msgstr ""
+
+#: woocommerce/cart/cart.php:111
+#, php-format
+msgid "Remove %s from cart"
+msgstr ""
+
+#: woocommerce/cart/cart.php:132
+msgid "Coupon:"
+msgstr ""
+
+#: woocommerce/cart/cart.php:132
+msgid "Coupon code"
+msgstr ""
+
+#: woocommerce/cart/cart.php:132
+msgid "Apply coupon"
+msgstr ""
+
+#: woocommerce/cart/cart.php:137
+msgid "Update cart"
+msgstr ""
+
+#: woocommerce/cart/cart.php:166
+msgid "Recommended products"
+msgstr ""
+
+#: woocommerce/cart/mini-cart.php:59
+msgid "Remove this item"
+msgstr ""
+
+#: woocommerce/cart/mini-cart.php:60
+msgid "Remove item"
+msgstr ""
+
+#: woocommerce/cart/mini-cart.php:111
+msgid "No products in the cart."
+msgstr ""
+
+#: woocommerce/content-product-cat.php:26
+#, php-format
+msgid "Go to product category %s"
+msgstr ""
+
+#: woocommerce/content-product.php:48
+msgid "Out of stock"
+msgstr ""
+
+#: woocommerce/content-product.php:86
+msgid "View product"
+msgstr ""
+
+#. translators: %s: Quantity.
+#: woocommerce/global/quantity-input.php:24
+#, php-format
+msgid "%s quantity"
+msgstr ""
+
+#: woocommerce/global/quantity-input.php:44
+msgid "Decrease quantity"
+msgstr ""
+
+#: woocommerce/global/quantity-input.php:55
+msgid "Product quantity"
+msgstr ""
+
+#: woocommerce/global/quantity-input.php:72
+msgid "Increase quantity"
+msgstr ""
+
+#: woocommerce/single-product/related.php:40
+msgid "Related products"
+msgstr ""

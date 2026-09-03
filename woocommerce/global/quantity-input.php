@@ -1,32 +1,83 @@
 <?php
-defined('ABSPATH') || exit;
-
 /**
- * Variables dostępne z Woo:
- * $input_id, $input_name, $input_value, $max_value, $min_value, $step,
- * $pattern, $inputmode, $product_name, $placeholder
+ * Product quantity inputs
+ *
+ * This template can be overridden by copying it to yourtheme/woocommerce/global/quantity-input.php.
+ *
+ * HOWEVER, on occasion WooCommerce will need to update template files and you
+ * (the theme developer) will need to copy the new files to your theme to
+ * maintain compatibility. We try to do this as little as possible, but it does
+ * happen. When this occurs the version of the template file will be bumped and
+ * the readme will list any important changes.
+ *
+ * @see     https://woocommerce.com/document/template-structure/
+ * @package WooCommerce\Templates
+ * @version 10.1.0
+ *
+ * @var bool   $readonly If the input should be set to readonly mode.
+ * @var string $type     The input type attribute.
  */
 
-$min  = isset( $min_value ) ? $min_value : 1;
+defined( 'ABSPATH' ) || exit;
+
+/* translators: %s: Quantity. */
+$label = ! empty( $args['product_name'] ) ? sprintf( esc_html__( '%s quantity', 'dc-circle' ), wp_strip_all_tags( $args['product_name'] ) ) : esc_html__( 'Quantity', 'dc-circle' );
+
+$min  = isset( $min_value ) ? $min_value : 0;
 $max  = isset( $max_value ) ? $max_value : '';
 $step = isset( $step ) ? $step : 1;
-?>
-<div class="dc-qty-wrapper" data-qty>
-	<button type="button" class="dc-qty-btn dc-qty-minus" aria-label="<?php esc_attr_e('Zmniejsz ilość','twój'); ?>">−</button>
+$type = isset( $type ) ? $type : 'number';
+$readonly = ! empty( $readonly );
 
+?>
+<div class="quantity dc-qty-wrapper" data-qty>
+	<?php
+	/**
+	 * Hook to output something before the quantity input field.
+	 *
+	 * @since 7.2.0
+	 */
+	do_action( 'woocommerce_before_quantity_input_field' );
+	?>
+
+	<?php if ( ! $readonly ) : ?>
+		<button type="button" class="dc-qty-btn dc-qty-minus" aria-label="<?php esc_attr_e( 'Decrease quantity', 'dc-circle' ); ?>">−</button>
+	<?php endif; ?>
+
+	<label class="screen-reader-text" for="<?php echo esc_attr( $input_id ); ?>"><?php echo esc_html( $label ); ?></label>
 	<input
-		type="number"
+		type="<?php echo esc_attr( $type ); ?>"
+		<?php echo $readonly ? 'readonly="readonly"' : ''; ?>
 		id="<?php echo esc_attr( $input_id ); ?>"
-		class="dc-qty-input"
+		class="<?php echo esc_attr( join( ' ', array_merge( array( 'dc-qty-input' ), (array) ( $classes ?? array() ) ) ) ); ?>"
 		name="<?php echo esc_attr( $input_name ); ?>"
 		value="<?php echo esc_attr( $input_value ); ?>"
+		aria-label="<?php esc_attr_e( 'Product quantity', 'dc-circle' ); ?>"
+		<?php if ( in_array( $type, array( 'text', 'search', 'tel', 'url', 'email', 'password' ), true ) ) : ?>
+			size="4"
+		<?php endif; ?>
 		min="<?php echo esc_attr( $min ); ?>"
-		<?php if ( '' !== $max ) : ?>max="<?php echo esc_attr( $max ); ?>"<?php endif; ?>
-		step="<?php echo esc_attr( $step ); ?>"
-		<?php if ( ! empty( $pattern ) ) : ?>pattern="<?php echo esc_attr( $pattern ); ?>"<?php endif; ?>
-		<?php if ( ! empty( $inputmode ) ) : ?>inputmode="<?php echo esc_attr( $inputmode ); ?>"<?php endif; ?>
-		aria-label="<?php echo esc_attr( $product_name ? sprintf( __( 'Ilość dla %s', 'twój' ), $product_name ) : __( 'Ilość', 'twój' ) ); ?>"
+		<?php if ( 0 < $max ) : ?>
+			max="<?php echo esc_attr( $max ); ?>"
+		<?php endif; ?>
+		<?php if ( ! $readonly ) : ?>
+			step="<?php echo esc_attr( $step ); ?>"
+			placeholder="<?php echo esc_attr( $placeholder ?? '' ); ?>"
+			inputmode="<?php echo esc_attr( $inputmode ?? '' ); ?>"
+			autocomplete="<?php echo esc_attr( isset( $autocomplete ) ? $autocomplete : 'on' ); ?>"
+		<?php endif; ?>
 	/>
 
-	<button type="button" class="dc-qty-btn dc-qty-plus" aria-label="<?php esc_attr_e('Zwiększ ilość','twój'); ?>">+</button>
+	<?php if ( ! $readonly ) : ?>
+		<button type="button" class="dc-qty-btn dc-qty-plus" aria-label="<?php esc_attr_e( 'Increase quantity', 'dc-circle' ); ?>">+</button>
+	<?php endif; ?>
+
+	<?php
+	/**
+	 * Hook to output something after quantity input field.
+	 *
+	 * @since 3.6.0
+	 */
+	do_action( 'woocommerce_after_quantity_input_field' );
+	?>
 </div>

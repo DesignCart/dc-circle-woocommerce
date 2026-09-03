@@ -1,0 +1,196 @@
+/** BLOG **/
+.dc-article{
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 0 25px 0 rgba(0,0,0,0);
+    transition: all 0.3s ease;
+}
+
+.dc-article:hover{
+    box-shadow: 0 0 25px 0 rgba(0,0,0,0.1);
+}
+
+.dc-article-body{
+    padding: 20px;
+}
+
+.dc-article-title{
+    margin-bottom: 15px;
+}
+
+.dc-article-info{
+    padding: 7px;
+    position: absolute;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.dc-article-image{
+    position: relative;
+}
+
+.card-img-top {
+  width: 100%;
+  height: auto;         /
+  object-fit: initial;
+}
+
+.dc-article-footer{
+    padding: 0px 20px 20px 20px;
+}
+
+.dc-article-footer a{
+    font-weight: 700;
+}
+.dc-sidebar{
+    position: sticky;
+    top:50px;
+    margin-top: 130px;
+}
+.dc-recent-posts .dc-recent-thumb img { object-fit: cover; }
+.dc-recent-posts .dc-recent-body a { text-decoration: none; }
+.dc-recent-posts .dc-recent-body a:hover { text-decoration: underline; }
+
+.comment-respond{
+  border:1px solid var(--dc-border);
+  border-radius:14px;
+  box-shadow: var(--dc-shadow);
+  padding: 1.5rem;
+  background:#fff;
+  margin-top:2.5rem;
+}
+.comment-respond .comment-reply-title{
+  font-size:1.25rem;
+  margin:0 0 .75rem;
+  color: var(--dc-bg-1);
+}
+
+/* Układ pól */
+.comment-form{
+  display:grid;
+  gap: 14px;
+}
+@media (min-width: 768px){
+  .comment-form{
+    grid-template-columns: 1fr 1fr;
+  }
+  .comment-form-comment{
+    grid-column: 1 / -1; /* textarea na całą szerokość */
+  }
+  .form-submit{
+    grid-column: 1 / -1;
+  }
+}
+
+/* Pola */
+.comment-form p{ margin:0; }
+.comment-form label{
+  display:block;
+  font-size:.9rem;
+  margin-bottom:.35rem;
+  color:#555;
+}
+
+.comment-form input[type="text"],
+.comment-form input[type="email"],
+.comment-form input[type="url"],
+.comment-form textarea{
+  width:100%;
+  border:1px solid var(--dc-border);
+  border-radius:10px;
+  padding:.65rem .8rem;
+  line-height:1.4;
+  background:#fff;
+  color:#222;
+  transition: border-color .15s ease, box-shadow .15s ease, background-color .2s ease;
+}
+
+.comment-form textarea{ min-height: 160px; resize: vertical; }
+
+.dc-single-wishlist {
+    margin-top: 15px;
+}
+
+.dc-single-wishlist-btn {
+	position: static;
+	margin-top: 10px;
+}
+
+/* Karta produktu lista życzeń: ukrycie napisu */
+.dc-single-wishlist-btn .yith-wcwl-add-to-wishlist-button__label {
+	display: none !important;
+}
+
+/* Karta produktu lista życzeń: samo serduszko, bez tła/kółka */
+.dc-single-wishlist-btn .yith-wcwl-add-to-wishlist-button.yith-wcwl-add-to-wishlist-button--anchor {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background: none;
+	border: none;
+	padding: 0;
+	margin: 0;
+	color: #6e5335; /* Twój kolor bazowy */
+	cursor: pointer;
+}
+
+/* Karta produktu lista życzeń: rozmiar ikony */
+.dc-single-wishlist-btn .yith-wcwl-add-to-wishlist-button svg {
+	width: 28px;
+	height: 28px;
+}
+
+/* Karta produktu lista życzeń: kolor po dodaniu */
+.dc-single-wishlist-btn .yith-wcwl-add-to-wishlist-button--exists,
+.dc-single-wishlist-btn .yith-wcwl-add-to-wishlist-button--added {
+	color: #b23c2a;
+}
+/* Karta produktu lista życzeń: Focus */
+.comment-form input:focus-visible,
+.comment-form textarea:focus-visible{
+  outline:0;
+  border-color: var(--dc-border-strong);
+  box-shadow: 0 0 0 4px rgba(110,83,53,.12);
+}
+/* Checkbox cookies */
+.comment-form-cookies-consent{
+  display:flex; align-items:center; gap:.5rem;
+  grid-column: 1 / -1;
+  color:#666;
+}
+.comment-form-cookies-consent input[type="checkbox"]{
+  width:1.05rem; height:1.05rem; accent-color: var(--dc-bg);
+}
+
+/* Błędy / wymagane */
+.comment-form .required{ color:#d33; margin-left:.25rem; }
+.comment-form .error{ color:#d33; font-size:.85rem; margin-top:.35rem; }
+
+/* Przycisk wyślij */
+.form-submit .submit{
+  display:inline-block;
+  background: var(--dc-bg-1);
+  color: var(--dc-color-1);
+  border:1px solid var(--dc-bg-1);
+  border-radius: 10px;
+  padding:.65rem 1rem;
+  font-weight:600;
+  cursor:pointer;
+  transition: transform .06s ease, filter .2s ease, box-shadow .2s ease;
+}
+.form-submit .submit:hover{ filter: brightness(.98); }
+.form-submit .submit:active{ transform: translateY(1px); }
+
+/* Odpowiedzi zagnieżdżone – drobne odsunięcie */
+.commentlist .children{
+  margin-left: 1.25rem;
+  border-left:2px solid var(--dc-border);
+  padding-left:1rem;
+}
+.logged-in-as{ margin-bottom:.5rem; font-size:.9rem; }
+#cancel-comment-reply-link{ font-size:.9rem; margin-left:.5rem; }
+
+/* Zgodność z motywami, które narzucają style */
+.comment-form input, .comment-form textarea { box-sizing: border-box; }

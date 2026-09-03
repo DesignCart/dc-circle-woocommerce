@@ -25,7 +25,7 @@
     <?php if ( $products_query->have_posts() ) : ?>
         <div class="container">
             <div id="products-carousel-news" class="dc-products-carousel-module">
-                <h2><?php echo esc_html( get_theme_mod( 'designcart_slider_new_title', __( 'Nowości', 'designcart' ) ) ); ?></h2>
+                <h2><?php echo esc_html( get_theme_mod( 'designcart_slider_new_title', __( 'New arrivals', 'dc-circle' ) ) ); ?></h2>
             
                 <div class="dc-products-carousel-wrapper">
                     <div class="dc-products-carousel dc-products-carousel-news owl-carousel">
@@ -64,7 +64,7 @@
                                                     aria-label="%4$s"
                                                     rel="nofollow">
                                                     %5$s
-                                                    <span class="dc-btn-text">Dodaj do koszyka</span>
+                                                    <span class="dc-btn-text">' . esc_html__( 'Add to cart', 'dc-circle' ) . '</span>
                                                 </a>',
                                                 esc_url( $url ),
                                                 esc_attr( $id ),
@@ -78,7 +78,7 @@
                                             printf(
                                                 '<a href="%1$s" class="button dc-btn dc-style-2 dc_product_info_button">
                                                     %2$s
-                                                    <span class="dc-btn-text">Wybierz opcje</span>
+                                                    <span class="dc-btn-text">' . esc_html__( 'Select options', 'dc-circle' ) . '</span>
                                                 </a>',
                                                 esc_url( get_the_permalink() ),
                                                 '<svg class="dc-icon dc-icon-search" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M21 20.29 16.65 15.9a8 8 0 1 0-1.41 1.41L20.29 21 21 20.29zM4 10a6 6 0 1 1 12.001.001A6 6 0 0 1 4 10z"/></svg>'
@@ -110,27 +110,3 @@
         </div>
     <?php endif; ?>
 <?php endif; ?>
-
-<script>
-    jQuery(document).ready(function($){
-        var $carousel = $('.dc-products-carousel-news');
-        $carousel.owlCarousel({
-            loop:true,
-            margin:10,
-            nav:false,
-            responsive:{
-                0:{ items:1 },
-                600:{ items:3 },
-                1000:{ items:4 }
-            }
-        });
-
-        $('#products-carousel-news .dc-owl-prev').click(function() {
-            $carousel.trigger('prev.owl.carousel');
-        });
-
-        $('#products-carousel-news .dc-owl-next').click(function() {
-            $carousel.trigger('next.owl.carousel');
-        });
-    });
-</script>

@@ -1,0 +1,33 @@
+/* SEARCH */
+.dc-search-wrapper {
+	display: flex;
+	align-items: center;
+	position: relative;
+	max-width: 500px;
+}
+
+.dc-search-input {
+	height: 40px;
+	padding: 0 20px;
+    width: 230px;
+	border-radius: 50px;
+	font-size: 0.75rem;
+}
+
+.dc-search-btn {
+	position: relative;
+    margin-left: -30px;
+	width: 62px;
+	height: 62px;
+	border: none;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	z-index: 1;
+}
+
+.dc-search-btn:hover {
+	background-color: #5b3e25;
+}

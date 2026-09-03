@@ -1,4 +1,14 @@
 <?php
+/**
+ * @package dc-circle
+ * @author Paweł Nosko
+ * @copyright 2026 Design Cart
+ * @license GPL-2.0-or-later
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
     function hex2rgba( $color, $alpha = 1 ) {
         $color = trim( $color, '#' );
 

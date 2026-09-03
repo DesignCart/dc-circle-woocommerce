@@ -1,117 +1,201 @@
 <?php
+/**
+ * @package dc-circle
+ * @author Paweł Nosko
+ * @copyright 2026 Design Cart
+ * @license GPL-2.0-or-later
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
     function designcart_theme_setup() {
+        load_theme_textdomain( 'dc-circle', get_template_directory() . '/languages' );
+
         add_theme_support( 'title-tag' );
         add_theme_support( 'post-thumbnails' );
+        add_theme_support( 'automatic-feed-links' );
         add_theme_support( 'woocommerce' );
+        add_theme_support( 'align-wide' );
+        add_theme_support( 'responsive-embeds' );
+        add_theme_support( 'wp-block-styles' );
+        add_theme_support(
+            'html5',
+            array(
+                'search-form',
+                'comment-form',
+                'comment-list',
+                'gallery',
+                'caption',
+                'style',
+                'script',
+            )
+        );
+        add_theme_support(
+            'custom-logo',
+            array(
+                'height'      => 120,
+                'width'       => 300,
+                'flex-height' => true,
+                'flex-width'  => true,
+            )
+        );
 
-        register_nav_menus( array(
-            'main_menu' => __( 'Menu główne', 'designcart' ),
-        ) );
+        add_theme_support(
+            'custom-background',
+            array(
+                'default-color' => 'ffffff',
+            )
+        );
 
-        register_nav_menus( array(
-            'footer_menu' => __( 'Menu w stopce', 'designcart' ),
-        ) );
+        add_theme_support(
+            'custom-header',
+            array(
+                'default-image'      => '',
+                'width'              => 1600,
+                'height'             => 600,
+                'flex-width'         => true,
+                'flex-height'        => true,
+                'header-text'        => false,
+                'uploads'            => true,
+            )
+        );
+
+        add_editor_style( array( 'assets/css/fonts.css', 'assets/css/editor-style.css', 'style.css' ) );
+
+        register_nav_menus(
+            array(
+                'main_menu'   => __( 'Main menu', 'dc-circle' ),
+                'footer_menu' => __( 'Footer menu', 'dc-circle' ),
+            )
+        );
     }
 
     function designcart_register_widget_areas() {
-        //FRONTPAGE
-        register_sidebar( array(
-            'name'          => __( 'Widget pod banerem' ),
-            'id'            => 'home-widget-1',
-            'description'   => __( 'Zawartość pod banerem.', 'designcart' ),
-            'before_widget' => '<section id="%1$s" class="widget %2$s">',
-            'after_widget'  => '</section>',
-            'before_title'  => '<h2 class="widget-title">',
-            'after_title'   => '</h2>',
-        ) );
+        register_sidebar(
+            array(
+                'name'          => __( 'Below banner widget', 'dc-circle' ),
+                'id'            => 'home-widget-1',
+                'description'   => __( 'Content below the banner.', 'dc-circle' ),
+                'before_widget' => '<section id="%1$s" class="widget %2$s">',
+                'after_widget'  => '</section>',
+                'before_title'  => '<h2 class="widget-title">',
+                'after_title'   => '</h2>',
+            )
+        );
 
-        register_sidebar( array(
-            'name'          => __( 'Widget pod nowościami' ),
-            'id'            => 'home-widget-2',
-            'description'   => __( 'Zawartość pod nowościami.', 'designcart' ),
-            'before_widget' => '<section id="%1$s" class="widget %2$s">',
-            'after_widget'  => '</section>',
-            'before_title'  => '<h2 class="widget-title">',
-            'after_title'   => '</h2>',
-        ) );
+        register_sidebar(
+            array(
+                'name'          => __( 'Below new arrivals widget', 'dc-circle' ),
+                'id'            => 'home-widget-2',
+                'description'   => __( 'Content below new arrivals.', 'dc-circle' ),
+                'before_widget' => '<section id="%1$s" class="widget %2$s">',
+                'after_widget'  => '</section>',
+                'before_title'  => '<h2 class="widget-title">',
+                'after_title'   => '</h2>',
+            )
+        );
 
-        register_sidebar( array(
-            'name'          => __( 'Widget pod promocjami' ),
-            'id'            => 'home-widget-3',
-            'description'   => __( 'Zawartość pod promocjami.', 'designcart' ),
-            'before_widget' => '<section id="%1$s" class="widget %2$s">',
-            'after_widget'  => '</section>',
-            'before_title'  => '<h2 class="widget-title">',
-            'after_title'   => '</h2>',
-        ) );
+        register_sidebar(
+            array(
+                'name'          => __( 'Below sale widget', 'dc-circle' ),
+                'id'            => 'home-widget-3',
+                'description'   => __( 'Content below sale items.', 'dc-circle' ),
+                'before_widget' => '<section id="%1$s" class="widget %2$s">',
+                'after_widget'  => '</section>',
+                'before_title'  => '<h2 class="widget-title">',
+                'after_title'   => '</h2>',
+            )
+        );
 
-        register_sidebar( array(
-            'name'          => __( 'Widget pod bestsellerami' ),
-            'id'            => 'home-widget-4',
-            'description'   => __( 'Zawartość pod bestsellerami.', 'designcart' ),
-            'before_widget' => '<section id="%1$s" class="widget %2$s">',
-            'after_widget'  => '</section>',
-            'before_title'  => '<h2 class="widget-title">',
-            'after_title'   => '</h2>',
-        ) );
+        register_sidebar(
+            array(
+                'name'          => __( 'Below bestsellers widget', 'dc-circle' ),
+                'id'            => 'home-widget-4',
+                'description'   => __( 'Content below bestsellers.', 'dc-circle' ),
+                'before_widget' => '<section id="%1$s" class="widget %2$s">',
+                'after_widget'  => '</section>',
+                'before_title'  => '<h2 class="widget-title">',
+                'after_title'   => '</h2>',
+            )
+        );
 
-        register_sidebar( array(
-            'name'          => __( 'Widget pod wyróżnionymi' ),
-            'id'            => 'home-widget-5',
-            'description'   => __( 'Zawartość pod wyróżnionymi.', 'designcart' ),
-            'before_widget' => '<section id="%1$s" class="widget %2$s">',
-            'after_widget'  => '</section>',
-            'before_title'  => '<h2 class="widget-title">',
-            'after_title'   => '</h2>',
-        ) );
+        register_sidebar(
+            array(
+                'name'          => __( 'Below featured widget', 'dc-circle' ),
+                'id'            => 'home-widget-5',
+                'description'   => __( 'Content below featured items.', 'dc-circle' ),
+                'before_widget' => '<section id="%1$s" class="widget %2$s">',
+                'after_widget'  => '</section>',
+                'before_title'  => '<h2 class="widget-title">',
+                'after_title'   => '</h2>',
+            )
+        );
 
-        //FOOTER
-        register_sidebar( array(
-            'name'          => __( 'Stopka - lewa strona', 'designcart' ),
-            'id'            => 'footer-1',
-            'description'   => __( 'Zawartość stopki po lewej stronie.', 'designcart' ),
-            'before_widget' => '<section id="%1$s" class="widget %2$s">',
-            'after_widget'  => '</section>',
-            'before_title'  => '<h2 class="widget-title">',
-            'after_title'   => '</h2>',
-        ) );
+        register_sidebar(
+            array(
+                'name'          => __( 'Footer - left', 'dc-circle' ),
+                'id'            => 'footer-1',
+                'description'   => __( 'Footer content on the left.', 'dc-circle' ),
+                'before_widget' => '<section id="%1$s" class="widget %2$s">',
+                'after_widget'  => '</section>',
+                'before_title'  => '<h2 class="widget-title">',
+                'after_title'   => '</h2>',
+            )
+        );
 
-        register_sidebar( array(
-            'name'          => __( 'Stopka - środek', 'designcart' ),
-            'id'            => 'footer-2',
-            'description'   => __( 'Zawartość stopki na środku.', 'designcart' ),
-            'before_widget' => '<section id="%1$s" class="widget %2$s">',
-            'after_widget'  => '</section>',
-            'before_title'  => '<h2 class="widget-title">',
-            'after_title'   => '</h2>',
-        ) );
+        register_sidebar(
+            array(
+                'name'          => __( 'Footer - center', 'dc-circle' ),
+                'id'            => 'footer-2',
+                'description'   => __( 'Footer content in the center.', 'dc-circle' ),
+                'before_widget' => '<section id="%1$s" class="widget %2$s">',
+                'after_widget'  => '</section>',
+                'before_title'  => '<h2 class="widget-title">',
+                'after_title'   => '</h2>',
+            )
+        );
 
-        register_sidebar( array(
-            'name'          => __( 'Stopka - prawa strona', 'designcart' ),
-            'id'            => 'footer-3',
-            'description'   => __( 'Zawartość stopki po prawej stronie.', 'designcart' ),
-            'before_widget' => '<section id="%1$s" class="widget %2$s">',
-            'after_widget'  => '</section>',
-            'before_title'  => '<h2 class="widget-title">',
-            'after_title'   => '</h2>',
-        ) );
+        register_sidebar(
+            array(
+                'name'          => __( 'Footer - right', 'dc-circle' ),
+                'id'            => 'footer-3',
+                'description'   => __( 'Footer content on the right.', 'dc-circle' ),
+                'before_widget' => '<section id="%1$s" class="widget %2$s">',
+                'after_widget'  => '</section>',
+                'before_title'  => '<h2 class="widget-title">',
+                'after_title'   => '</h2>',
+            )
+        );
     }
 
     add_action( 'after_setup_theme', 'designcart_theme_setup' );
     add_action( 'widgets_init', 'designcart_register_widget_areas' );
-    add_action('wp_enqueue_scripts', function(){ wp_enqueue_script('wc-cart-fragments'); }, 20);
+    add_action( 'wp_enqueue_scripts', function() {
+        if ( class_exists( 'WooCommerce' ) ) {
+            wp_enqueue_script( 'wc-cart-fragments' );
+        }
+        if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+            wp_enqueue_script( 'comment-reply' );
+        }
+    }, 20 );
 
-    add_action('wp_ajax_designcart_update_cart_item_quantity', 'designcart_update_cart_item_quantity');
-    add_action('wp_ajax_nopriv_designcart_update_cart_item_quantity', 'designcart_update_cart_item_quantity');
+    add_action( 'wp_ajax_dc_circle_update_cart_item_quantity', 'dc_circle_update_cart_item_quantity' );
+    add_action( 'wp_ajax_nopriv_dc_circle_update_cart_item_quantity', 'dc_circle_update_cart_item_quantity' );
 
-    function designcart_update_cart_item_quantity() {
-        if (!isset($_POST['cart_item_key'], $_POST['quantity'])) {
-            //wp_send_json_error('Błędne dane.');
-            //wp_die();
+    function dc_circle_update_cart_item_quantity() {
+        check_ajax_referer( 'dc_circle_cart', 'nonce' );
+
+        if ( ! class_exists( 'WooCommerce' ) || ! function_exists( 'WC' ) || ! WC()->cart ) {
+            wp_send_json_error( __( 'WooCommerce is not available.', 'dc-circle' ) );
         }
 
-        $cart_item_key = sanitize_text_field($_POST['cart_item_key']);
-        $quantity = intval($_POST['quantity']);
+        if ( ! isset( $_POST['cart_item_key'], $_POST['quantity'] ) ) {
+            wp_send_json_error( __( 'Invalid cart data.', 'dc-circle' ) );
+        }
+
+        $cart_item_key = sanitize_text_field( wp_unslash( $_POST['cart_item_key'] ) );
+        $quantity      = absint( $_POST['quantity'] );
 
         if ($quantity <= 0) {
             WC()->cart->remove_cart_item($cart_item_key);
@@ -142,50 +226,6 @@
 
         wp_die();
     }
-
-    add_shortcode('dc_newsletter', function () {
-        $action = esc_url( admin_url('admin-ajax.php?action=tnp&na=s') );
-
-        ob_start(); ?>
-        <div class="dc-newsletter">
-        <form action="<?php echo $action; ?>" method="post">
-            <input type="hidden" name="nr" value="minimal">
-            <input type="hidden" name="nlang" value="">
-
-            <div class="dc-newsletter__row">
-            <input class="dc-newsletter__email" type="email" name="ne" required placeholder="E-mail">
-            <button class="dc-newsletter__submit" type="submit">Subskrybuj</button>
-            </div>
-
-            <div class="dc-newsletter__privacy">
-            <label>
-                <input type="checkbox" name="ny" value="1" required>
-                Akceptuję politykę prywatności
-            </label>
-            </div>
-        </form>
-        </div>
-
-        <script>
-        // Fallback walidacji – jeśli coś znów wyłączy HTML5 validate
-        (function(){
-            var wrap = document.currentScript.previousElementSibling;
-            if(!wrap) return;
-            var form = wrap.querySelector('form');
-            if(!form) return;
-            form.addEventListener('submit', function(e){
-            var gdpr = form.querySelector('input[name="ny"]');
-            if (!gdpr || gdpr.checked) return;
-            e.preventDefault();
-            // prosty komunikat – dopasuj do swojego UI
-            gdpr.focus();
-            alert('Musisz zaakceptować politykę prywatności.');
-            });
-        })();
-        </script>
-        <?php
-        return ob_get_clean();
-    });
 
     if ( ! class_exists( 'DC_Mobile_Accordion_Walker' ) ) {
         class DC_Mobile_Accordion_Walker extends Walker_Nav_Menu {

@@ -1,4 +1,14 @@
 <?php
+/**
+ * @package dc-circle
+ * @author Paweł Nosko
+ * @copyright 2026 Design Cart
+ * @license GPL-2.0-or-later
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
     add_action('after_setup_theme', function() {
         remove_action('woocommerce_before_shop_loop', 'woocommerce_output_all_notices', 10);
         remove_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
@@ -60,7 +70,7 @@
                 '<a href="%1$s" class="%2$s dc-btn dc-style-2 dc-btn-choose">%3$s</a>',
                 esc_url( get_permalink( $product->get_id() ) ),
                 esc_attr( $cls ),
-                esc_html__( 'Wybierz opcje', 'twój' )
+                esc_html__( 'Select options', 'dc-circle' )
             );
         }
 
@@ -69,7 +79,7 @@
                 '<a href="%1$s" class="%2$s dc-btn dc-style-2 dc-btn-grouped">%3$s</a>',
                 esc_url( get_permalink( $product->get_id() ) ),
                 esc_attr( $cls ),
-                esc_html__( 'Zobacz zestaw', 'twój' )
+                esc_html__( 'View grouped products', 'dc-circle' )
             );
         }
 
@@ -78,7 +88,7 @@
                 '<a href="%1$s" target="_blank" rel="nofollow noopener" class="%2$s dc-btn dc-style-2 dc-btn-external">%3$s</a>',
                 esc_url( $product->get_product_url() ),
                 esc_attr( $cls ),
-                esc_html( $product->button_text ? $product->button_text : __( 'Kup teraz', 'twój' ) )
+                esc_html( $product->button_text ? $product->button_text : __( 'Buy now', 'dc-circle' ) )
             );
         }
 
@@ -105,4 +115,26 @@
         echo '</div>';
     }, 999);
 
-    
+/**
+ * Font Awesome icon class for a My Account menu endpoint.
+ *
+ * @param string $endpoint Endpoint slug.
+ * @return string
+ */
+function dc_circle_account_menu_icon( $endpoint ) {
+	$icons = array(
+		'dashboard'       => 'fa-gauge-high',
+		'orders'          => 'fa-bag-shopping',
+		'downloads'       => 'fa-download',
+		'edit-address'    => 'fa-location-dot',
+		'payment-methods' => 'fa-credit-card',
+		'edit-account'    => 'fa-user',
+		'customer-logout' => 'fa-right-from-bracket',
+		'wishlist'        => 'fa-heart',
+		'view-order'      => 'fa-receipt',
+	);
+
+	$icons = apply_filters( 'dc_circle_account_menu_icons', $icons );
+
+	return isset( $icons[ $endpoint ] ) ? $icons[ $endpoint ] : 'fa-circle';
+}
