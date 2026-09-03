@@ -46,7 +46,7 @@ $loop = new WP_Query( $args );
 									<p class="dc-article-text"><?php echo wp_trim_words( get_the_excerpt(), 24 ); ?></p>
 								</div>
 								<div class="dc-article-footer">
-									<a href="<?php the_permalink(); ?>">Czytaj więcej...</a>
+									<a href="<?php the_permalink(); ?>"><?php esc_html_e( 'Read more...', 'dc-circle' ); ?></a>
 								</div>
 							</article>
 						</div>
@@ -64,7 +64,7 @@ $loop = new WP_Query( $args );
 					?>
 				</div>
 			<?php else : ?>
-				<p>Brak wpisów.</p>
+				<p><?php esc_html_e( 'No posts found.', 'dc-circle' ); ?></p>
 			<?php endif; ?>
 
 			<?php wp_reset_postdata(); ?>

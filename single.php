@@ -46,7 +46,7 @@ get_header(); ?>
 					</div>
 
 					<footer class="mt-4">
-						<?php the_tags('<div class="small">Tagi: ', ', ', '</div>'); ?>
+						<?php the_tags( '<div class="small">' . esc_html__( 'Tags:', 'dc-circle' ) . ' ', ', ', '</div>' ); ?>
 					</footer>
 
 				</article>
@@ -54,8 +54,8 @@ get_header(); ?>
 				<hr class="my-5">
 
 				<nav class="d-flex justify-content-between">
-					<div class="prev"><?php previous_post_link('%link', '← Poprzedni wpis'); ?></div>
-					<div class="next"><?php next_post_link('%link', 'Następny wpis →'); ?></div>
+					<div class="prev"><?php previous_post_link( '%link', esc_html__( '&larr; Previous post', 'dc-circle' ) ); ?></div>
+					<div class="next"><?php next_post_link( '%link', esc_html__( 'Next post &rarr;', 'dc-circle' ) ); ?></div>
 				</nav>
 
 				<?php if ( comments_open() || get_comments_number() ) : ?>
@@ -66,7 +66,7 @@ get_header(); ?>
 
 			<?php endwhile; else : ?>
 
-				<p>Brak treści.</p>
+				<p><?php esc_html_e( 'No content.', 'dc-circle' ); ?></p>
 
 			<?php endif; ?>
 
@@ -75,7 +75,7 @@ get_header(); ?>
         <div class="col-lg-4">
             <aside class="dc-sidebar">
                 <div class="mb-4">
-                    <h5 class="mb-3">Najnowsze wpisy</h5>
+                    <h5 class="mb-3"><?php esc_html_e( 'Latest posts', 'dc-circle' ); ?></h5>
 
                     <?php
                     $q = new WP_Query([
@@ -103,18 +103,18 @@ get_header(); ?>
                             <div class="dc-recent-body">
                             <div class="small text-muted mb-1"><?php echo esc_html( get_the_date() ); ?></div>
                             <h6 class="mb-1"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h6>
-                            <a class="btn btn-sm btn-outline-secondary" href="<?php the_permalink(); ?>">więcej</a>
+                            <a class="btn btn-sm btn-outline-secondary" href="<?php the_permalink(); ?>"><?php esc_html_e( 'More', 'dc-circle' ); ?></a>
                             </div>
                         </li>
                         <?php endwhile; wp_reset_postdata(); ?>
                     </ul>
                     <?php else : ?>
-                    <p class="text-muted small mb-0">Brak wpisów.</p>
+                    <p class="text-muted small mb-0"><?php esc_html_e( 'No posts found.', 'dc-circle' ); ?></p>
                     <?php endif; ?>
                 </div>
 
                 <div class="mb-4">
-                    <h5 class="mb-3">Archiwum</h5>
+                    <h5 class="mb-3"><?php esc_html_e( 'Archives', 'dc-circle' ); ?></h5>
                     <ul class="list-unstyled mb-0">
                     <?php wp_get_archives(['type'=>'monthly']); ?>
                     </ul>

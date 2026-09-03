@@ -37,7 +37,7 @@ get_header(); ?>
 								</div>
 
                                 <div class="dc-article-footer">
-                                    <a href="<?php the_permalink(); ?>">Czytaj więcej...</a>
+                                    <a href="<?php the_permalink(); ?>"><?php esc_html_e( 'Read more...', 'dc-circle' ); ?></a>
                                 </div>
 								
 							</article>
@@ -49,7 +49,7 @@ get_header(); ?>
 					<?php the_posts_pagination(); ?>
 				</div>
 			<?php else : ?>
-				<p>Brak wpisów.</p>
+				<p><?php esc_html_e( 'No posts found.', 'dc-circle' ); ?></p>
 			<?php endif; ?>
 		</div>
 	</div>

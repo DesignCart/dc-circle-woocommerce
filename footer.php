@@ -1,3 +1,17 @@
+<?php
+/**
+ * @package dc-circle
+ * @author Paweł Nosko
+ * @copyright 2026 Design Cart
+ * @license GPL-2.0-or-later
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+?>
+</div><!-- #content -->
+
 <div id="footer">
     <div class="container">
         <div class="row">
@@ -17,7 +31,7 @@
                 <?php endif; ?>
 
                 <div class="footer-menu-wrapper">
-                    <h4>Menu</h4>
+                    <h4><?php esc_html_e( 'Menu', 'dc-circle' ); ?></h4>
                     <?php
                         wp_nav_menu([
                             'theme_location' => 'footer_menu',
@@ -42,9 +56,16 @@
 <div class="copyright-wrapper">
     <div class="copyright">
         <div class="container">
-            All rights reserved <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo get_bloginfo( 'name' ); ?></a> 
-            - Copyright © | Designed by 
-            <a href="https://www.designcart.pl" target="_blank">Design Cart</a>
+            <?php
+            echo wp_kses_post(
+                sprintf(
+                    /* translators: 1: site link, 2: author link */
+                    __( 'All rights reserved %1$s - Copyright &copy; | Designed by %2$s', 'dc-circle' ),
+                    '<a href="' . esc_url( home_url( '/' ) ) . '">' . esc_html( get_bloginfo( 'name' ) ) . '</a>',
+                    '<a href="' . esc_url( wp_get_theme()->get( 'AuthorURI' ) ) . '" target="_blank" rel="noopener noreferrer">' . esc_html( wp_get_theme()->get( 'Author' ) ) . '</a>'
+                )
+            );
+            ?>
         </div>
     </div>
 </div>
